@@ -1238,6 +1238,188 @@
 }
 
 </style>
+
+<style data-purpose="mobile-hero-v006">
+  .hero-intro-mobile,
+  .hero-cta-mobile,
+  .hero-scroll {
+    display: none;
+  }
+
+  @media (max-width: 767px) {
+    .lucia-responsive .hero-section {
+      height: var(--mobile-hero-height, calc(100svh - 122px));
+      min-height: 0;
+      max-height: none;
+      padding: 0;
+      isolation: isolate;
+    }
+
+    .lucia-responsive .hero-layout {
+      display: block;
+      position: relative;
+      width: 100%;
+      max-width: none;
+      height: 100%;
+      min-height: inherit;
+      padding: 0;
+    }
+
+    .lucia-responsive .hero-visual {
+      display: block;
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      width: 100%;
+      max-width: none;
+      height: 100%;
+      margin: 0;
+    }
+
+    .lucia-responsive .hero-visual > div:first-child {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      background: #0b0a09;
+      box-shadow: none;
+      overflow: hidden;
+    }
+
+    .lucia-responsive .hero-visual > div:first-child > div {
+      height: 100%;
+      border-radius: 0;
+      overflow: hidden;
+    }
+
+    .lucia-responsive .hero-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+      border-radius: 0;
+      transform: none;
+    }
+
+    .lucia-responsive .hero-visual img + div {
+      display: block;
+      background: linear-gradient(180deg, rgba(11, 10, 9, .14) 0%, rgba(11, 10, 9, .18) 34%, rgba(11, 10, 9, .74) 63%, rgba(11, 10, 9, .99) 100%);
+    }
+
+    .lucia-responsive .hero-image-caption,
+    .lucia-responsive .hero-visual > div:last-child,
+    .lucia-responsive .hero-badge,
+    .lucia-responsive .hero-proof {
+      display: none;
+    }
+
+    .lucia-responsive .hero-copy {
+      display: flex;
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      min-height: inherit;
+      padding: 0 22px 76px;
+      align-items: center;
+      justify-content: flex-end;
+      text-align: center;
+    }
+
+    .lucia-responsive .hero-copy h1 {
+      order: initial;
+      max-width: 360px;
+      margin: 0 0 12px;
+      font-size: clamp(28px, 7.8vw, 34px);
+      line-height: 1.02;
+      letter-spacing: -.025em;
+      text-shadow: 0 2px 20px rgba(0, 0, 0, .68);
+    }
+
+    .lucia-responsive .hero-copy h1 .text-gold-gradient {
+      background: linear-gradient(135deg, #F3DDA7 0%, #D8AE61 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .lucia-responsive .hero-intro {
+      order: initial;
+      max-width: 330px;
+      margin: 0 0 14px;
+      color: #fff7ed;
+      font-size: 14px;
+      line-height: 1.5;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, .78);
+    }
+
+    .lucia-responsive .hero-intro-desktop,
+    .lucia-responsive .hero-cta-desktop {
+      display: none;
+    }
+
+    .lucia-responsive .hero-intro-mobile,
+    .lucia-responsive .hero-cta-mobile {
+      display: inline;
+    }
+
+    .lucia-responsive .hero-actions {
+      order: initial;
+      display: block;
+      width: 100%;
+      max-width: 310px;
+      margin: 0;
+    }
+
+    .lucia-responsive .hero-actions > a:first-child {
+      display: flex;
+      width: 100%;
+      min-height: 52px;
+      padding: 13px 16px;
+      justify-content: center;
+      font-size: 11px;
+      letter-spacing: .09em;
+    }
+
+    .lucia-responsive .hero-actions > a:last-child {
+      display: none;
+    }
+
+    .lucia-responsive .hero-scroll {
+      display: flex;
+      position: absolute;
+      bottom: 14px;
+      left: 50%;
+      width: 44px;
+      height: 44px;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      transform: translateX(-50%);
+      text-shadow: 0 2px 8px rgba(0, 0, 0, .85);
+      animation: hero-arrow 1.8s ease-in-out infinite;
+    }
+
+    .lucia-responsive .hero-scroll svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  @keyframes hero-arrow {
+    0%, 100% { transform: translate(-50%, 0); }
+    50% { transform: translate(-50%, 6px); }
+  }
+
+  @media (max-width: 767px) and (prefers-reduced-motion: reduce) {
+    .lucia-responsive .hero-scroll {
+      animation: none;
+    }
+  }
+</style>
 </head>
 <body class="lucia-responsive overflow-x-hidden antialiased selection:bg-gold-primary selection:text-white">
 <!-- BEGIN: TopBar -->
@@ -1316,18 +1498,21 @@
             </span>
 </div>
 <h1 class="font-editorial text-5xl xl:text-6xl 2xl:text-7xl font-normal leading-[1.08] text-warm-ivory mb-6 tracking-tight">Mega Hair pensado para parecer <span class="italic font-light text-gold-gradient whitespace-nowrap">parte&nbsp;de&nbsp;você.</span></h1>
-<p class="hero-intro text-base xl:text-lg font-light text-muted-sand leading-relaxed max-w-2xl mb-8">Comprimento, preenchimento e volume imperceptíveis ao toque. Uma aplicação artesanal que respeita o peso folicular, preserva seu cabelo natural e entrega caimento&nbsp;de&nbsp;seda.</p>
+<p class="hero-intro text-base xl:text-lg font-light text-muted-sand leading-relaxed max-w-2xl mb-8"><span class="hero-intro-desktop">Comprimento, preenchimento e volume imperceptíveis ao toque. Uma aplicação artesanal que respeita o peso folicular, preserva seu cabelo natural e entrega caimento&nbsp;de&nbsp;seda.</span><span class="hero-intro-mobile">Aplicação artesanal para um resultado natural, leve e imperceptível.</span></p>
 <!-- Action Buttons -->
 <div class="hero-actions flex items-center gap-5 mb-12">
 <a class="px-8 py-4 bg-gold-gradient hover:opacity-95 text-luxury-black font-semibold text-xs tracking-[0.2em] uppercase rounded-sm shadow-xl flex items-center gap-3 transition-transform active:scale-95" href="https://wa.me/5521999999999?text=Ola%20Lucia,%20gostaria%20de%20agendar%20uma%20avaliacao%20personalizada">
 <i class="fa-brands fa-whatsapp text-sm"></i>
-<span class="">Quero minha avaliação</span>
+<span class="hero-cta-desktop">Quero minha avaliação</span><span class="hero-cta-mobile">Agendar minha avaliação</span>
 </a>
 <a class="px-8 py-4 border border-gold-medium hover:border-gold-light text-soft-champagne hover:text-white font-medium text-xs tracking-[0.2em] uppercase rounded-sm transition-colors flex items-center gap-2" href="#transformacoes">
 <span class="">Ver transformações</span>
 <i class="fa-solid fa-chevron-down text-[10px]"></i>
 </a>
 </div>
+<a class="hero-scroll" href="#sobre" aria-label="Descer para conhecer Lucia Lima">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+</a>
 <!-- Proof mini-strip -->
 <div class="hero-proof grid grid-cols-3 gap-6 pt-8 border-t border-gold-subtle/60">
 <div>
@@ -1898,6 +2083,31 @@
 
 
 
+<script data-purpose="mobile-hero-height-lock">
+(() => {
+  const mobileViewport = window.matchMedia('(max-width: 767px)');
+  const hero = document.querySelector('.hero-section');
+
+  function lockHeroHeight() {
+    if (!hero || !mobileViewport.matches) {
+      document.documentElement.style.removeProperty('--mobile-hero-height');
+      return;
+    }
+
+    const heroTop = Math.max(0, Math.round(hero.getBoundingClientRect().top + window.scrollY));
+    const availableHeight = Math.max(360, Math.round(window.innerHeight - heroTop));
+    document.documentElement.style.setProperty('--mobile-hero-height', `${availableHeight}px`);
+  }
+
+  lockHeroHeight();
+
+  window.addEventListener('orientationchange', () => {
+    window.setTimeout(lockHeroHeight, 450);
+  }, { passive: true });
+
+  mobileViewport.addEventListener('change', lockHeroHeight);
+})();
+</script>
 <script data-purpose="mobile-navigation">
 (() => {
   const header = document.querySelector('.site-header');
