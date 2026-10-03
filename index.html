@@ -1427,6 +1427,304 @@
   transform-origin: left center;
 }
 </style>
+<style data-purpose="quick-stats-refinement">
+/* Acabamento editorial dos quatro indicadores, sem alterar o conteúdo */
+.lucia-responsive .proof-strip {
+  background:
+    radial-gradient(circle at 50% -30%, rgba(185, 138, 62, .13), transparent 46%),
+    linear-gradient(180deg, #FBF7F0 0%, #F5EDE2 100%);
+}
+.lucia-responsive .proof-strip > div {
+  gap: 14px;
+}
+.lucia-responsive .proof-strip .proof-stat {
+  position: relative;
+  display: flex;
+  box-sizing: border-box;
+  min-height: 112px;
+  padding: 24px 16px 18px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid rgba(185, 138, 62, .26) !important;
+  border-radius: 3px;
+  background: linear-gradient(145deg, rgba(255, 253, 249, .96), rgba(236, 224, 206, .64));
+  box-shadow: 0 9px 24px rgba(58, 40, 28, .065), inset 0 1px 0 rgba(255, 255, 255, .9);
+}
+.lucia-responsive .proof-strip .proof-stat::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 44px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #B98A3E 26%, #D4A85B 74%, transparent);
+  transform: translateX(-50%);
+}
+.lucia-responsive .proof-strip .proof-stat::after {
+  content: "";
+  position: absolute;
+  top: -32px;
+  left: 50%;
+  width: 82px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(185, 138, 62, .08);
+  filter: blur(14px);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+.lucia-responsive .proof-strip .proof-stat > span:first-child {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 7px;
+  color: #17120F;
+  font-weight: 600;
+}
+.lucia-responsive .proof-strip .proof-stat > span:last-child {
+  position: relative;
+  z-index: 1;
+  max-width: 190px;
+  color: #655347;
+  line-height: 1.55;
+}
+@media (max-width: 767px) {
+  .lucia-responsive .proof-strip > div {
+    gap: 10px;
+  }
+  .lucia-responsive .proof-strip .proof-stat {
+    min-height: 106px;
+    padding: 21px 9px 15px;
+  }
+  .lucia-responsive .proof-strip .proof-stat > span:first-child {
+    margin-bottom: 5px;
+    font-size: clamp(23px, 6.3vw, 26px);
+    white-space: nowrap;
+  }
+  .lucia-responsive .proof-strip .proof-stat > span:last-child {
+    font-size: 9px;
+    letter-spacing: .07em;
+  }
+}
+</style>
+<style data-purpose="featured-before-after">
+.featured-comparison {
+  position: relative;
+  overflow: hidden;
+  padding: 88px 0 96px;
+  border-bottom: 1px solid rgba(185, 138, 62, .25);
+  background:
+    radial-gradient(circle at 50% 0, rgba(185, 138, 62, .13), transparent 34%),
+    linear-gradient(160deg, #17120F 0%, #0B0A09 72%);
+}
+.featured-comparison::before {
+  content: "";
+  position: absolute;
+  inset: 22px;
+  border: 1px solid rgba(185, 138, 62, .12);
+  pointer-events: none;
+}
+.featured-comparison__inner {
+  position: relative;
+  z-index: 1;
+  width: min(100% - 48px, 1120px);
+  margin-inline: auto;
+}
+.featured-comparison__heading {
+  max-width: 760px;
+  margin: 0 auto 42px;
+  text-align: center;
+}
+.featured-comparison__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  margin-bottom: 14px;
+  color: #D4A85B;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+}
+.featured-comparison__eyebrow::before,
+.featured-comparison__eyebrow::after {
+  content: "";
+  width: 34px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #B98A3E);
+}
+.featured-comparison__eyebrow::after { transform: scaleX(-1); }
+.featured-comparison__heading h2 {
+  margin: 0 0 14px;
+  color: #F7F1E8;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(38px, 5vw, 60px);
+  font-weight: 500;
+  line-height: 1.02;
+  text-wrap: balance;
+}
+.featured-comparison__heading p {
+  max-width: 590px;
+  margin: 0 auto;
+  color: #C9B79D;
+  font-size: 14px;
+  line-height: 1.7;
+  text-wrap: balance;
+}
+.comparison-frame {
+  --comparison-position: 50%;
+  position: relative;
+  width: min(100%, 520px);
+  aspect-ratio: 941 / 1672;
+  margin-inline: auto;
+  overflow: hidden;
+  border: 1px solid rgba(212, 168, 91, .48);
+  border-radius: 6px;
+  background: #201813;
+  box-shadow: 0 28px 70px rgba(0, 0, 0, .42), 0 0 0 8px rgba(185, 138, 62, .055);
+  isolation: isolate;
+  touch-action: pan-y;
+}
+.comparison-visual,
+.comparison-visual img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.comparison-visual img {
+  display: block;
+  object-fit: contain;
+  object-position: center;
+}
+.comparison-visual--before {
+  z-index: 2;
+  clip-path: inset(0 calc(100% - var(--comparison-position)) 0 0);
+}
+.comparison-shade {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(11, 10, 9, .08), transparent 52%, rgba(11, 10, 9, .25));
+}
+.comparison-label,
+.comparison-placeholder-note {
+  position: absolute;
+  z-index: 6;
+  border: 1px solid rgba(212, 168, 91, .45);
+  background: rgba(11, 10, 9, .76);
+  color: #F7F1E8;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.comparison-label {
+  top: 18px;
+  padding: 7px 11px;
+  border-radius: 2px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+.comparison-label--before { left: 18px; }
+.comparison-label--after { right: 18px; }
+.comparison-placeholder-note {
+  top: 18px;
+  left: 50%;
+  padding: 6px 10px;
+  border-color: rgba(255, 255, 255, .18);
+  color: #DAC9B4;
+  font-size: 8px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  transform: translateX(-50%);
+}
+.comparison-divider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--comparison-position);
+  z-index: 5;
+  width: 2px;
+  background: #F7F1E8;
+  box-shadow: 0 0 0 1px rgba(11, 10, 9, .18), 0 0 18px rgba(11, 10, 9, .28);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+.comparison-handle {
+  position: absolute;
+  top: 50%;
+  left: var(--comparison-position);
+  z-index: 7;
+  display: flex;
+  width: 54px;
+  height: 54px;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border: 2px solid #F7F1E8;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #B98A3E, #D4A85B 52%, #9A6E29);
+  color: #0B0A09;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .35);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+.comparison-handle svg { width: 10px; height: 16px; }
+.comparison-range {
+  position: absolute;
+  inset: 0;
+  z-index: 8;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: ew-resize;
+}
+.comparison-range:focus-visible + .comparison-focus-ring {
+  position: absolute;
+  inset: 6px;
+  z-index: 9;
+  border: 2px solid #D4A85B;
+  border-radius: 3px;
+  pointer-events: none;
+}
+.comparison-drag-hint {
+  display: flex;
+  width: fit-content;
+  margin: 22px auto 0;
+  align-items: center;
+  gap: 9px;
+  color: #DAC9B4;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  transition: opacity .25s ease;
+}
+.comparison-drag-hint svg { width: 22px; height: 12px; color: #D4A85B; }
+.comparison-frame.has-interacted + .comparison-drag-hint { opacity: .48; }
+@media (max-width: 767px) {
+  .featured-comparison { padding: 62px 0 68px; }
+  .featured-comparison::before { inset: 12px; }
+  .featured-comparison__inner { width: min(100% - 40px, 1120px); }
+  .featured-comparison__heading { margin-bottom: 28px; }
+  .featured-comparison__heading h2 { font-size: clamp(34px, 10vw, 42px); line-height: 1.04; }
+  .featured-comparison__heading p { font-size: 13px; line-height: 1.6; }
+  .comparison-frame { aspect-ratio: 941 / 1672; border-radius: 4px; }
+  .comparison-label { top: 12px; padding: 6px 8px; font-size: 8px; }
+  .comparison-label--before { left: 12px; }
+  .comparison-label--after { right: 12px; }
+  .comparison-placeholder-note { top: auto; bottom: 10px; max-width: calc(100% - 24px); white-space: nowrap; }
+  .comparison-handle { width: 48px; height: 48px; }
+  .comparison-drag-hint { margin-top: 18px; font-size: 9px; letter-spacing: .11em; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .comparison-drag-hint { transition: none; }
+}
+</style>
 <style>
 /* Atendimento flutuante — isolado do restante da página */
 .floating-whatsapp{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;flex-direction:column;align-items:flex-end;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(18px) scale(.94);transform-origin:bottom right;transition:opacity .28s ease,transform .28s ease,visibility .28s}
@@ -1591,25 +1889,58 @@
 <!-- BEGIN: QuickStatsStrip -->
 <section class="proof-strip bg-warm-ivory text-luxury-black py-7 border-b border-soft-champagne">
 <div class="max-w-[1440px] mx-auto px-10 grid grid-cols-4 gap-8 divide-x divide-soft-champagne/80">
-<div class="text-center px-4">
+<div class="proof-stat text-center px-4">
 <span class="block font-editorial text-3xl font-bold tracking-tight text-luxury-black">12+ Anos</span>
 <span class="text-xs uppercase tracking-widest text-luxury-charcoal font-medium">de Excelência no Rio</span>
 </div>
-<div class="text-center px-4">
+<div class="proof-stat text-center px-4">
 <span class="block font-editorial text-3xl font-bold tracking-tight text-luxury-black">1.800+</span>
 <span class="text-xs uppercase tracking-widest text-luxury-charcoal font-medium">Mulheres Transformadas</span>
 </div>
-<div class="text-center px-4">
+<div class="proof-stat text-center px-4">
 <span class="block font-editorial text-3xl font-bold tracking-tight text-luxury-black">1-a-1</span>
 <span class="text-xs uppercase tracking-widest text-luxury-charcoal font-medium">Atendimento Privativo</span>
 </div>
-<div class="text-center px-4">
+<div class="proof-stat text-center px-4">
 <span class="block font-editorial text-3xl font-bold tracking-tight text-luxury-black">Garantia</span>
 <span class="text-xs uppercase tracking-widest text-luxury-charcoal font-medium">de Saúde Folicular</span>
 </div>
 </div>
 </section>
 <!-- END: QuickStatsStrip -->
+<!-- BEGIN: FeaturedBeforeAfter -->
+<section class="featured-comparison" aria-labelledby="featured-comparison-title">
+<div class="featured-comparison__inner">
+<header class="featured-comparison__heading">
+<span class="featured-comparison__eyebrow">Antes × Depois</span>
+<h2 id="featured-comparison-title">Compare o antes e veja a transformação.</h2>
+<p>Arraste a linha para visualizar como o Mega Hair transforma densidade e caimento sem perder a naturalidade.</p>
+</header>
+<div class="comparison-frame" data-before-after role="group" aria-label="Comparação real de antes e depois do Mega Hair">
+<div class="comparison-visual comparison-visual--after">
+<img src="https://res.cloudinary.com/jcotat5a/image/upload/v1791054641/depois1.avif" alt="Depois do Mega Hair, com cabelos mais longos e volumosos" decoding="async">
+</div>
+<div class="comparison-visual comparison-visual--before">
+<img src="https://res.cloudinary.com/jcotat5a/image/upload/v1791054641/antes1.avif" alt="Antes da aplicação do Mega Hair" decoding="async">
+</div>
+<div class="comparison-shade" aria-hidden="true"></div>
+<span class="comparison-label comparison-label--before">Antes</span>
+<span class="comparison-label comparison-label--after">Depois</span>
+<span class="comparison-divider" aria-hidden="true"></span>
+<span class="comparison-handle" aria-hidden="true">
+<svg viewBox="0 0 10 16" fill="none"><path d="M8 2 2 8l6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<svg viewBox="0 0 10 16" fill="none"><path d="m2 2 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</span>
+<input class="comparison-range" data-comparison-range type="range" min="0" max="100" value="50" aria-label="Arraste para comparar o antes e o depois" aria-valuetext="50% da imagem Antes visível">
+<span class="comparison-focus-ring" aria-hidden="true"></span>
+</div>
+<div class="comparison-drag-hint" aria-hidden="true">
+<svg viewBox="0 0 24 12" fill="none"><path d="m5 1-4 5 4 5M19 1l4 5-4 5M2 6h20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+Arraste para comparar
+</div>
+</div>
+</section>
+<!-- END: FeaturedBeforeAfter -->
 <!-- BEGIN: ThePhilosophyAndFounder -->
 <section class="py-24 bg-warm-ivory relative border-b border-soft-champagne" id="sobre">
 <div class="founder-layout max-w-[1440px] mx-auto px-10 grid grid-cols-12 gap-16 items-center">
@@ -2132,6 +2463,22 @@
 
 
 
+<script data-purpose="featured-before-after-behavior">
+(() => {
+  document.querySelectorAll('[data-before-after]').forEach(comparison => {
+    const range = comparison.querySelector('[data-comparison-range]');
+    if (!range) return;
+    const updateComparison = () => {
+      const value = Number(range.value);
+      comparison.style.setProperty('--comparison-position', `${value}%`);
+      comparison.classList.add('has-interacted');
+      range.setAttribute('aria-valuetext', `${value}% da imagem Antes visível`);
+    };
+    range.addEventListener('input', updateComparison);
+    range.addEventListener('change', updateComparison);
+  });
+})();
+</script>
 <script data-purpose="floating-whatsapp-behavior">
 (() => {
   const widget = document.querySelector('[data-whatsapp-widget]');
