@@ -4,8 +4,7 @@
 <title>Lucia Lima Mega Hair • Ipanema | Transformações Naturais &amp; Cabelos Nobres</title>
 <!-- Fontes críticas incorporadas para evitar bloqueio de renderização -->
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
-<link href="https://res.cloudinary.com" rel="preconnect">
-<link as="image" fetchpriority="high" href="https://res.cloudinary.com/jcotat5a/image/upload/v1791056748/hero.avif" rel="preload">
+<link as="image" fetchpriority="high" href="imagens/hero.avif" rel="preload">
 <style data-purpose="critical-fonts">
 /* latin */
 @font-face {
@@ -1924,7 +1923,7 @@ body.video-modal-open{overflow:hidden}
   user-select:none;
 }
 .ll-watermark span{display:block}
-.ll-watermark span+span{margin-left:-.34em;transform:translateY(.27em)}
+.ll-watermark span+span{margin-left:-.20em;font-size:.88em;transform:translateY(.34em)}
 .ll-watermark--video{
   top:50%;
   left:clamp(20px,5vw,76px);
@@ -1936,15 +1935,15 @@ body.video-modal-open{overflow:hidden}
 .ll-watermark--methodology{
   top:50%;
   right:-.18em;
-  color:rgba(154,110,41,.035);
-  font-size:clamp(250px,30vw,460px);
+  color:rgba(154,110,41,.045);
+  font-size:clamp(240px,28vw,420px);
   transform:translateY(-48%);
 }
 .ll-watermark--cta{
   top:50%;
   left:50%;
   color:rgba(212,168,91,.055);
-  font-size:clamp(250px,30vw,460px);
+  font-size:clamp(240px,28vw,420px);
   transform:translate(-50%,-50%);
 }
 @media(max-width:767px){
@@ -2014,6 +2013,221 @@ body.video-modal-open{overflow:hidden}
   .google-review-set[aria-hidden="true"]{display:none}
 }
 </style>
+<style data-purpose="stage-one-refinement">
+/* Etapa 1: ritmo vertical, legibilidade e equilíbrio do comparador */
+@media(min-width:768px){
+  .lucia-responsive .featured-comparison{
+    padding-top:70px;
+    padding-bottom:76px;
+  }
+  .lucia-responsive .featured-comparison__heading{margin-bottom:32px}
+  .lucia-responsive .comparison-drag-hint{margin-top:16px}
+  .lucia-responsive #metodologia{
+    padding-top:80px;
+    padding-bottom:80px;
+  }
+  .lucia-responsive .google-reviews-section{
+    padding-top:80px;
+    padding-bottom:82px;
+  }
+  .lucia-responsive .results-grid p{
+    font-size:13px;
+    line-height:1.65;
+  }
+  .lucia-responsive .studio-info>p{
+    font-size:15px;
+    line-height:1.75;
+  }
+  .lucia-responsive .studio-info .space-y-4 p{
+    font-size:13px;
+    line-height:1.65;
+  }
+}
+@media(max-width:767px){
+  .lucia-responsive #sobre,
+  .lucia-responsive #tecnicas,
+  .lucia-responsive #metodologia,
+  .lucia-responsive #espaco,
+  .lucia-responsive #faq{
+    padding-top:48px;
+    padding-bottom:48px;
+  }
+  .lucia-responsive #transformacoes{
+    padding-top:52px;
+    padding-bottom:52px;
+  }
+  .lucia-responsive .featured-comparison{
+    padding-top:52px;
+    padding-bottom:56px;
+  }
+  .lucia-responsive .featured-comparison__heading{margin-bottom:24px}
+  .lucia-responsive .comparison-drag-hint{margin-top:16px}
+  .lucia-responsive .google-reviews-section{
+    padding-top:56px;
+    padding-bottom:60px;
+  }
+  .lucia-responsive .studio-info>p,
+  .lucia-responsive .studio-info .space-y-4 p{
+    font-size:15px;
+    line-height:1.68;
+  }
+  .lucia-responsive .studio-info .space-y-4 span{
+    font-size:13px;
+    line-height:1.55;
+  }
+}
+</style>
+<style data-purpose="stage-two-mobile-gallery">
+/* Etapa 2: carrossel nativo, leve e exclusivo para o mobile */
+@media(max-width:767px){
+  .lucia-responsive .results-grid{
+    display:flex;
+    width:100%;
+    max-width:none;
+    margin-inline:0;
+    padding:2px clamp(20px,8vw,34px) 14px 0;
+    gap:14px;
+    overflow-x:auto;
+    overflow-y:hidden;
+    overscroll-behavior-inline:contain;
+    scroll-padding-inline:0;
+    scroll-snap-type:x mandatory;
+    scrollbar-width:thin;
+    scrollbar-color:#B98A3E rgba(212,168,91,.14);
+    -webkit-overflow-scrolling:touch;
+  }
+  .lucia-responsive .results-grid>div{
+    flex:0 0 min(84vw,360px);
+    scroll-snap-align:start;
+    scroll-snap-stop:always;
+  }
+  .lucia-responsive .results-grid::-webkit-scrollbar{height:4px}
+  .lucia-responsive .results-grid::-webkit-scrollbar-track{
+    border-radius:999px;
+    background:rgba(212,168,91,.14);
+  }
+  .lucia-responsive .results-grid::-webkit-scrollbar-thumb{
+    border-radius:999px;
+    background:#B98A3E;
+  }
+  .lucia-responsive .gallery-cta{margin-top:36px}
+  .lucia-responsive .results-swipe-hint{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:7px;
+    width:100%;
+    margin:9px 0 0;
+    color:#D4A85B;
+    text-align:center;
+  }
+  .lucia-responsive .results-swipe-hint span{
+    font-size:10px;
+    font-weight:700;
+    line-height:1.35;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+  }
+  .lucia-responsive .results-swipe-hint svg{
+    width:48px;
+    height:14px;
+    overflow:visible;
+    animation:results-hint-right 2.2s cubic-bezier(.45,0,.25,1) infinite;
+  }
+}
+.results-swipe-hint{display:none}
+@keyframes results-hint-right{
+  0%,100%{opacity:.38;transform:translateX(-7px)}
+  48%{opacity:1;transform:translateX(7px)}
+  72%{opacity:.72;transform:translateX(10px)}
+}
+@media(prefers-reduced-motion:reduce){
+  .lucia-responsive .results-swipe-hint svg{animation:none;opacity:.9;transform:none}
+}
+</style>
+<style data-purpose="stage-three-video-footer-refinement">
+/* Etapa 3: equilíbrio do vídeo e agrupamento final do footer */
+@media(min-width:768px){
+  .lucia-responsive .transformation-video-inner{
+    grid-template-columns:minmax(0,1fr) 410px;
+    gap:clamp(44px,6vw,84px);
+  }
+  .lucia-responsive .transformation-video-preview{width:min(100%,367px)}
+  .lucia-responsive .transformation-video-cover{min-height:605px}
+}
+@media(max-width:767px){
+  .lucia-responsive .transformation-video-section{padding:56px 0 60px}
+  .lucia-responsive .transformation-video-inner{gap:30px}
+  .lucia-responsive .transformation-video-preview{width:min(100%,320px)}
+
+  .lucia-responsive .site-footer{
+    padding-top:40px;
+    padding-bottom:calc(84px + env(safe-area-inset-bottom,0px));
+  }
+  .lucia-responsive .site-footer>div:first-child{
+    gap:24px;
+    margin-bottom:24px;
+  }
+  .lucia-responsive .site-footer>div:first-child>div:not(:first-child){
+    padding-top:22px;
+    border-top:1px solid rgba(185,138,62,.18);
+  }
+  .lucia-responsive .site-footer>div:first-child>div:first-child>p{
+    margin-bottom:12px;
+    font-size:13px;
+    line-height:1.65;
+  }
+  .lucia-responsive .site-footer h5{margin-bottom:8px}
+  .lucia-responsive .site-footer li>a{
+    min-height:36px;
+    padding-block:4px;
+    font-size:13px;
+  }
+  .lucia-responsive .site-footer>div:first-child>div:last-child p{
+    margin-bottom:9px;
+    font-size:13px;
+    line-height:1.6;
+  }
+  .lucia-responsive .site-footer>div:first-child>div:last-child p:last-child{margin-bottom:0}
+  .lucia-responsive .footer-legal{
+    gap:14px;
+    padding-top:22px;
+  }
+  .lucia-responsive .footer-legal p{line-height:1.55}
+  .lucia-responsive .footer-legal a{min-height:36px}
+}
+</style>
+<style data-purpose="infinite-results-gallery-and-modal">
+.lucia-responsive [data-result-open]{cursor:zoom-in}
+.lucia-responsive [data-result-open] img{transition:transform .45s cubic-bezier(.22,.61,.36,1)}
+.lucia-responsive [data-result-open]:hover img{transform:scale(1.025)}
+.lucia-responsive [data-result-open]:focus-visible{outline:2px solid #D4A85B;outline-offset:4px}
+.result-modal{position:fixed;inset:0;z-index:125;display:grid;place-items:center;padding:24px;background:rgba(5,4,4,.92);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .28s ease,visibility .28s}
+.result-modal.is-open{opacity:1;visibility:visible;pointer-events:auto}
+.result-modal-dialog{position:relative;display:grid;grid-template-columns:minmax(0,1.08fr) minmax(300px,.92fr);width:min(100%,960px);max-height:calc(100svh - 48px);overflow:hidden;border:1px solid rgba(212,168,91,.42);border-radius:16px;background:#100d0b;box-shadow:0 30px 90px rgba(0,0,0,.58)}
+.result-modal-media{min-height:560px;background:#090807}
+.result-modal-media img{display:block;width:100%;height:100%;object-fit:contain}
+.result-modal-copy{display:flex;flex-direction:column;justify-content:center;padding:54px 46px;background:radial-gradient(circle at 100% 0,rgba(185,138,62,.13),transparent 44%),#17120f}
+.result-modal-kicker{margin-bottom:14px;color:#D4A85B;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase}
+.result-modal-copy h3{margin:0 0 18px;color:#F7F1E8;font:500 36px/1.05 "Cormorant Garamond",Georgia,serif}
+.result-modal-copy p{margin:0;color:#CDBEAD;font-size:14px;line-height:1.75}
+.result-modal-close{position:absolute;top:14px;right:14px;z-index:2;display:grid;width:42px;height:42px;place-items:center;border:1px solid rgba(247,241,232,.3);border-radius:50%;background:rgba(11,10,9,.82);color:#F7F1E8;cursor:pointer;backdrop-filter:blur(8px);transition:background .2s ease,color .2s ease}
+.result-modal-close:hover{background:#B98A3E;color:#0B0A09}
+.result-modal-close:focus-visible{outline:2px solid #D4A85B;outline-offset:3px}
+body.result-modal-open{overflow:hidden}
+@media(max-width:767px){
+  .result-modal{padding:14px}
+  .result-modal-dialog{display:block;width:min(100%,420px);max-height:calc(100svh - 28px);overflow-y:auto}
+  .result-modal-media{height:min(62svh,520px);min-height:0}
+  .result-modal-copy{padding:28px 24px 30px}
+  .result-modal-copy h3{font-size:30px}
+  .result-modal-copy p{font-size:13px;line-height:1.65}
+}
+@media(prefers-reduced-motion:reduce){
+  .lucia-responsive [data-result-open] img,.result-modal,.result-modal-close{transition:none}
+}
+</style>
 <style data-purpose="premium-gold-button-motion">
 .lucia-responsive a.bg-gold-gradient,
 .lucia-responsive button.bg-gold-gradient,
@@ -2077,7 +2291,7 @@ body.video-modal-open{overflow:hidden}
 <header class="site-header sticky top-0 z-50 bg-luxury-black/95 backdrop-blur-md border-b border-gold-subtle transition-all">
 <nav aria-label="Navegação Principal" class="max-w-[1440px] mx-auto px-10 h-24 flex flex-row items-center justify-between gap-6 overflow-hidden">
 <!-- Brand Logo / Monogram -->
-<a class="brand-logo flex items-center gap-4 group shrink-0" href="#"><img alt="Lucia Lima Mega Hair" class="w-auto object-contain transition-transform group-hover:scale-105 h-14" src="https://res.cloudinary.com/jcotat5a/image/upload/c_limit,w_500,q_auto:good,f_avif/v1791056749/LOGO1.avif" width="500" height="167" decoding="async"></a>
+<a class="brand-logo flex items-center gap-4 group shrink-0" href="#"><img alt="Lucia Lima Mega Hair" class="w-auto object-contain transition-transform group-hover:scale-105 h-14" src="imagens/LOGO1.avif" width="500" height="167" decoding="async"></a>
 <!-- Desktop Links -->
 <ul class="desktop-navigation hidden lg:flex items-center gap-8 tracking-widest uppercase font-medium text-soft-champagne/90 shrink-0 text-xs">
 <li class="shrink-0"><a class="hover:text-gold-primary transition-colors py-2 whitespace-nowrap" href="#sobre">Sobre</a></li>
@@ -2132,7 +2346,7 @@ body.video-modal-open{overflow:hidden}
 <i class="fa-solid fa-star"></i>
 </div>
 <span class="text-xs font-medium text-soft-champagne tracking-wide">
-<strong class="text-warm-ivory">5.0</strong> no Google (53 avaliações em Ipanema)
+<strong class="text-warm-ivory">5.0</strong> no Google • Top 1 em Mega Hair em Ipanema
             </span>
 </div>
 <h1 class="font-editorial text-5xl xl:text-6xl 2xl:text-7xl font-normal leading-[1.08] text-warm-ivory mb-6 tracking-tight">Mega Hair pensado para parecer <span class="italic font-light text-gold-gradient whitespace-nowrap">parte&nbsp;de&nbsp;você.</span></h1>
@@ -2171,7 +2385,7 @@ body.video-modal-open{overflow:hidden}
 <div class="hero-visual col-span-5 relative">
 <div class="relative w-full aspect-[4/5] rounded-t-[120px] rounded-b-2xl overflow-hidden border border-gold-subtle p-2 bg-luxury-dark/50 shadow-2xl">
 <div class="relative w-full h-full rounded-t-[112px] rounded-b-xl overflow-hidden">
-<img alt="Resultado impecável de mega hair com brilho e naturalidade em Ipanema" class="w-full h-full object-cover object-center transform hover:scale-105 transition-duration-700 transition-all duration-700" src="https://res.cloudinary.com/jcotat5a/image/upload/v1791056748/hero.avif" width="410" height="512" loading="eager" decoding="async" fetchpriority="high">
+<img alt="Resultado impecável de mega hair com brilho e naturalidade em Ipanema" class="w-full h-full object-cover object-center transform hover:scale-105 transition-duration-700 transition-all duration-700" src="imagens/hero.avif" width="410" height="512" loading="eager" decoding="async" fetchpriority="high">
 <div class="absolute inset-0 bg-gradient-to-t from-luxury-black/90 via-transparent to-transparent"></div>
 <!-- Floating Pill Card on Hero Image -->
 <div class="hero-image-caption absolute bottom-6 left-6 right-6 p-4 rounded-lg bg-luxury-black/80 backdrop-blur-md border border-gold-subtle flex items-center justify-between">
@@ -2221,10 +2435,10 @@ body.video-modal-open{overflow:hidden}
 </header>
 <div class="comparison-frame" data-before-after role="group" aria-label="Comparação real de antes e depois do Mega Hair">
 <div class="comparison-visual comparison-visual--after">
-<img src="https://res.cloudinary.com/jcotat5a/image/upload/v1791054641/depois1.avif" srcset="https://res.cloudinary.com/jcotat5a/image/upload/c_limit,w_700,q_auto:good,f_avif/v1791054641/depois1.avif 700w, https://res.cloudinary.com/jcotat5a/image/upload/v1791054641/depois1.avif 941w" sizes="(max-width: 767px) calc(100vw - 48px), 1000px" alt="Depois do Mega Hair, com cabelos mais longos e volumosos" decoding="async" width="941" height="1672" loading="lazy" fetchpriority="low">
+<img src="imagens/depois1.avif" srcset="imagens/depois1.avif 700w, imagens/depois1.avif 941w" sizes="(max-width: 767px) calc(100vw - 48px), 1000px" alt="Depois do Mega Hair, com cabelos mais longos e volumosos" decoding="async" width="941" height="1672" loading="lazy" fetchpriority="low">
 </div>
 <div class="comparison-visual comparison-visual--before">
-<img src="https://res.cloudinary.com/jcotat5a/image/upload/v1791054641/antes1.avif" srcset="https://res.cloudinary.com/jcotat5a/image/upload/c_limit,w_700,q_auto:good,f_avif/v1791054641/antes1.avif 700w, https://res.cloudinary.com/jcotat5a/image/upload/v1791054641/antes1.avif 941w" sizes="(max-width: 767px) calc(100vw - 48px), 1000px" alt="Antes da aplicação do Mega Hair" decoding="async" width="941" height="1672" loading="lazy" fetchpriority="low">
+<img src="imagens/antes1.avif" srcset="imagens/antes1.avif 700w, imagens/antes1.avif 941w" sizes="(max-width: 767px) calc(100vw - 48px), 1000px" alt="Antes da aplicação do Mega Hair" decoding="async" width="941" height="1672" loading="lazy" fetchpriority="low">
 </div>
 <div class="comparison-shade" aria-hidden="true"></div>
 <span class="comparison-label comparison-label--before">Antes</span>
@@ -2250,7 +2464,7 @@ Arraste para comparar
 <!-- Left: Founder Portrait with Elegant Frame -->
 <div class="founder-visual col-span-5 relative">
 <div class="relative mx-auto max-w-[420px] rounded-2xl overflow-hidden border border-gold-primary/30 shadow-2xl p-2 bg-white">
-<img alt="Lucia Lima, especialista e fundadora do ateliê em Ipanema" class="w-full h-[520px] object-cover rounded-xl" src="https://res.cloudinary.com/jcotat5a/image/upload/v1791056749/hero2.avif" srcset="https://res.cloudinary.com/jcotat5a/image/upload/c_limit,w_700,q_auto:good,f_avif/v1791056749/hero2.avif 700w, https://res.cloudinary.com/jcotat5a/image/upload/v1791056749/hero2.avif 1122w" sizes="(max-width: 767px) calc(100vw - 64px), 50vw" width="1122" height="1402" loading="lazy" decoding="async" fetchpriority="low">
+<img alt="Lucia Lima, especialista e fundadora do ateliê em Ipanema" class="w-full h-[520px] object-cover rounded-xl" src="imagens/hero2.avif" srcset="imagens/hero2.avif 700w, imagens/hero2.avif 1122w" sizes="(max-width: 767px) calc(100vw - 64px), 50vw" width="1122" height="1402" loading="lazy" decoding="async" fetchpriority="low">
 </div>
 <!-- Quote Badge -->
 <div class="absolute -bottom-6 -right-4 bg-luxury-black border border-gold-medium p-6 rounded-xl shadow-xl max-w-xs">
@@ -2389,11 +2603,11 @@ Arraste para comparar
 </div>
 </div>
 <!-- Before / After Grid Showcase -->
-<div class="results-grid grid grid-cols-3 gap-8">
+<div class="results-grid grid grid-cols-3 gap-8" role="region" aria-label="Galeria de resultados reais; deslize horizontalmente para ver mais" tabindex="0">
 <!-- Case 1 -->
-<div class="bg-luxury-black rounded-xl overflow-hidden border border-gold-subtle p-3 shadow-xl">
-<div class="relative aspect-[4/5] rounded-lg overflow-hidden mb-4 bg-luxury-dark">
-<img alt="Caso 01 - Transição de comprimento e preenchimento de pontas" class="w-full h-full object-center object-cover" src="https://res.cloudinary.com/jcotat5a/image/upload/v1791056750/antesxdepois1.avif" width="410" height="512" loading="lazy" decoding="async" fetchpriority="low">
+<div class="bg-luxury-black rounded-xl overflow-hidden border border-gold-subtle p-3 shadow-xl" data-result-card data-result-title="Mariana S. — Leblon" data-result-method="60cm • Castanho Iluminado" data-result-description="Recuperação de densidade nas pontas com 140g de cabelo brasileiro do sul. Mescla exata com a iluminação pré-existente." data-result-image="imagens/antesxdepois1.avif">
+<div class="relative aspect-[4/5] rounded-lg overflow-hidden mb-4 bg-luxury-dark" data-result-open role="button" tabindex="0" aria-label="Ampliar o resultado de Mariana e ver detalhes do processo">
+<img alt="Caso 01 - Transição de comprimento e preenchimento de pontas" class="w-full h-full object-center object-cover" src="imagens/antesxdepois1.avif" width="410" height="512" loading="lazy" decoding="async" fetchpriority="low">
 <div class="absolute top-3 bg-luxury-black/80 backdrop-blur-md px-2.5 py-1 rounded text-[10px] uppercase font-bold tracking-wider text-warm-ivory border border-gold-subtle z-10 whitespace-nowrap text-center" style="left: 50%; transform: translateX(-50%);">
                 60cm • Castanho Iluminado
               </div>
@@ -2406,9 +2620,9 @@ Arraste para comparar
 </div>
 </div>
 <!-- Case 2 -->
-<div class="bg-luxury-black rounded-xl overflow-hidden border border-gold-subtle p-3 shadow-xl">
-<div class="relative aspect-[4/5] rounded-lg overflow-hidden mb-4">
-<img alt="Caso 02 - Volume exuberante em loiro perolado" class="w-full h-full object-cover object-center" src="https://res.cloudinary.com/jcotat5a/image/upload/v1791056751/antesxdepois2.avif" width="410" height="512" loading="lazy" decoding="async" fetchpriority="low">
+<div class="bg-luxury-black rounded-xl overflow-hidden border border-gold-subtle p-3 shadow-xl" data-result-card data-result-title="Beatriz V. — Ipanema" data-result-method="65cm • Loiro Vanilla" data-result-description="Preenchimento total de comprimento e volume após corte químico. Sensação de peso natural e toque aveludado." data-result-image="imagens/antesxdepois2.avif">
+<div class="relative aspect-[4/5] rounded-lg overflow-hidden mb-4" data-result-open role="button" tabindex="0" aria-label="Ampliar o resultado de Beatriz e ver detalhes do processo">
+<img alt="Caso 02 - Volume exuberante em loiro perolado" class="w-full h-full object-cover object-center" src="imagens/antesxdepois2.avif" width="410" height="512" loading="lazy" decoding="async" fetchpriority="low">
 <div class="absolute top-3 left-1/2 -translate-x-1/2 z-10 whitespace-nowrap bg-luxury-black/80 backdrop-blur-md px-2.5 py-1 rounded text-[10px] uppercase font-bold tracking-wider text-warm-ivory border border-gold-subtle text-center">
                 65cm • Loiro Vanilla
               </div>
@@ -2421,9 +2635,9 @@ Arraste para comparar
 </div>
 </div>
 <!-- Case 3 -->
-<div class="bg-luxury-black rounded-xl overflow-hidden border border-gold-subtle p-3 shadow-xl">
-<div class="relative aspect-[4/5] rounded-lg overflow-hidden mb-4">
-<img alt="Caso 03 - Cabelo liso profundo e brilho espelhado" class="w-full h-full object-cover object-center" src="https://res.cloudinary.com/jcotat5a/image/upload/v1791056746/antesxdepois3.avif" width="410" height="512" loading="lazy" decoding="async" fetchpriority="low">
+<div class="bg-luxury-black rounded-xl overflow-hidden border border-gold-subtle p-3 shadow-xl" data-result-card data-result-title="Camila R. — Lagoa" data-result-method="55cm • Morena Iluminada" data-result-description="Correção de corte desfiado com mechas ultrafinas adesivadas. Liberdade total para prender e treinar diariamente." data-result-image="imagens/antesxdepois3.avif">
+<div class="relative aspect-[4/5] rounded-lg overflow-hidden mb-4" data-result-open role="button" tabindex="0" aria-label="Ampliar o resultado de Camila e ver detalhes do processo">
+<img alt="Caso 03 - Cabelo liso profundo e brilho espelhado" class="w-full h-full object-cover object-center" src="imagens/antesxdepois3.avif" width="410" height="512" loading="lazy" decoding="async" fetchpriority="low">
 <div class="absolute top-3 left-1/2 -translate-x-1/2 z-10 whitespace-nowrap bg-luxury-black/80 backdrop-blur-md px-2.5 py-1 rounded text-[10px] uppercase font-bold tracking-wider text-warm-ivory border border-gold-subtle text-center">
                 55cm • Morena Iluminada
               </div>
@@ -2435,6 +2649,10 @@ Arraste para comparar
               </p>
 </div>
 </div>
+</div>
+<div class="results-swipe-hint" aria-hidden="true">
+<span>Arraste para o lado para ver os resultados</span>
+<svg viewBox="0 0 52 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 7h48M43 1l6 6-6 6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
 </div>
 <!-- Interactive CTA bar -->
 <div class="gallery-cta mt-14 p-8 rounded-2xl bg-luxury-card border border-gold-medium flex items-center justify-between">
@@ -2470,8 +2688,8 @@ Arraste para comparar
 </ul>
 </div>
 <div class="transformation-video-preview">
-<button class="transformation-video-cover" type="button" aria-label="Assistir ao vídeo da transformação" aria-haspopup="dialog" data-video-open data-video-src="https://res.cloudinary.com/jcotat5a/video/upload/v1791244099/Video_Site.mp4">
-<img class="transformation-video-cover-image" src="https://res.cloudinary.com/jcotat5a/image/upload/v1791244866/capavideo.avif" alt="" width="720" height="1280" loading="lazy" decoding="async">
+<button class="transformation-video-cover" type="button" aria-label="Assistir ao vídeo da transformação" aria-haspopup="dialog" data-video-open data-video-src="imagens/Video%20Site.mp4">
+<img class="transformation-video-cover-image" src="imagens/capavideo.avif" alt="" width="720" height="1280" loading="lazy" decoding="async">
 <span class="transformation-video-shade" aria-hidden="true"></span>
 <span class="transformation-video-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.4v13.2L18.5 12 8 5.4Z"></path></svg></span>
 <span class="transformation-video-caption"><strong>Assista a transformação</strong><span>Vídeo real • Lucia Lima</span></span>
@@ -2598,15 +2816,15 @@ Arraste para comparar
 </div>
 </div>
 </div>
-<div class="studio-actions flex flex-col items-start gap-3 w-fit"><a class="px-6 py-3 border border-gold-medium hover:border-gold-primary text-soft-champagne hover:text-white rounded text-xs uppercase tracking-widest font-semibold flex items-center gap-2 transition-all whitespace-nowrap" href="https://maps.google.com" rel="noopener noreferrer" target="_blank"><i class="fa-solid fa-map-location-dot text-gold-primary"></i><span class="">Como Chegar (Google Maps)</span></a><a class="px-6 py-3 bg-luxury-card hover:bg-luxury-charcoal border border-gold-subtle text-gold-light rounded text-xs uppercase tracking-widest font-semibold flex items-center gap-2 transition-all whitespace-nowrap" href="https://wa.me/5521999999999"><i class="fa-brands fa-whatsapp"></i><span class="">Consultar Agenda da Semana</span></a></div>
+<div class="studio-actions flex flex-col items-start gap-3 w-fit"><a class="px-6 py-3 border border-gold-medium hover:border-gold-primary text-soft-champagne hover:text-white rounded text-xs uppercase tracking-widest font-semibold flex items-center gap-2 transition-all whitespace-nowrap" href="https://www.google.com/maps/place/Lucia+Lima+mega+hair/data=!4m2!3m1!1s0x0:0x128dbcd8628d003?sa=X&ved=1t:2428&ictx=111" rel="noopener noreferrer" target="_blank"><i class="fa-solid fa-map-location-dot text-gold-primary"></i><span class="">Como Chegar (Google Maps)</span></a><a class="px-6 py-3 bg-luxury-card hover:bg-luxury-charcoal border border-gold-subtle text-gold-light rounded text-xs uppercase tracking-widest font-semibold flex items-center gap-2 transition-all whitespace-nowrap" href="https://wa.me/5521999999999"><i class="fa-brands fa-whatsapp"></i><span class="">Consultar Agenda da Semana</span></a></div>
 </div>
 <!-- Studio Imagery Grid -->
 <div class="studio-photos col-span-6 grid grid-cols-2 gap-4">
 <div class="rounded-xl overflow-hidden border border-gold-subtle h-72 shadow-lg">
-<img alt="Ambiente de atendimento no ateliê em Ipanema" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" src="https://res.cloudinary.com/jcotat5a/image/upload/v1791056747/atendimento_1.avif" width="410" height="512" loading="lazy" decoding="async" fetchpriority="low">
+<img alt="Ambiente de atendimento no ateliê em Ipanema" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" src="imagens/atendimento%201.avif" width="410" height="512" loading="lazy" decoding="async" fetchpriority="low">
 </div>
 <div class="rounded-xl overflow-hidden border border-gold-subtle h-72 shadow-lg mt-8">
-<img alt="Bancada de atendimento e curadoria de mechas" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" src="https://res.cloudinary.com/jcotat5a/image/upload/v1791056747/atendimento2.avif" width="410" height="512" loading="lazy" decoding="async" fetchpriority="low">
+<img alt="Bancada de atendimento e curadoria de mechas" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" src="imagens/atendimento2.avif" width="410" height="512" loading="lazy" decoding="async" fetchpriority="low">
 </div>
 </div>
 </div>
@@ -2701,14 +2919,14 @@ Arraste para comparar
 <div class="max-w-[1440px] mx-auto px-10 grid grid-cols-12 gap-10 mb-12">
 <!-- Brand & Mission -->
 <div class="col-span-4">
-<div class="mb-4"><img src="https://res.cloudinary.com/jcotat5a/image/upload/c_limit,w_500,q_auto:good,f_avif/v1791056749/LOGO1.avif" alt="Lucia Lima Mega Hair" class="h-10 md:h-12 w-auto object-contain" width="500" height="167" loading="lazy" decoding="async" fetchpriority="low"></div>
+<div class="mb-4"><img src="imagens/LOGO1.avif" alt="Lucia Lima Mega Hair" class="h-10 md:h-12 w-auto object-contain" width="500" height="167" loading="lazy" decoding="async" fetchpriority="low"></div>
 <p class="text-xs leading-relaxed text-muted-sand/80 max-w-sm mb-4">
           Especialista em Mega Hair de alta precisão em Ipanema. Alongamento e preenchimento imperceptíveis com foco incondicional na saúde do couro cabeludo e fios nobres.
         </p>
 <div class="footer-socials flex items-center gap-4 text-soft-champagne text-base">
-<a aria-label="Instagram de Lucia Lima" class="hover:text-gold-primary transition-colors" href="https://instagram.com" rel="noopener noreferrer" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+<a aria-label="Instagram de Lucia Lima" class="hover:text-gold-primary transition-colors" href="https://www.instagram.com/luciamegahair/" rel="noopener noreferrer" target="_blank"><i class="fa-brands fa-instagram"></i></a>
 <a aria-label="WhatsApp" class="hover:text-gold-primary transition-colors" href="https://wa.me/5521999999999"><i class="fa-brands fa-whatsapp"></i></a>
-<a aria-label="Facebook" class="hover:text-gold-primary transition-colors" href="https://facebook.com"><i class="fa-brands fa-facebook"></i></a>
+<a aria-label="Facebook" class="hover:text-gold-primary transition-colors" href="https://www.facebook.com/profile.php?id=100093694999679&amp;locale=gn_PY#"><i class="fa-brands fa-facebook"></i></a>
 </div>
 </div>
 <!-- Quick Nav -->
@@ -2739,10 +2957,9 @@ Arraste para comparar
 </div>
 <!-- Bottom Legal Bar -->
 <div class="footer-legal max-w-[1440px] mx-auto px-10 pt-8 border-t border-gold-subtle/30 flex justify-between items-center text-[11px] text-muted-sand/60">
-<p class="">© 2024 Lucia Lima Mega Hair • Ipanema. Todos os direitos reservados.</p>
+<p class="">© <span data-current-year>2026</span> Lucia Lima Mega Hair • Ipanema. Todos os direitos reservados.</p>
 <div class="flex items-center gap-6">
-<a class="hover:text-gold-light transition-colors" href="#">Termos de Atendimento</a>
-<a class="hover:text-gold-light transition-colors" href="#">Privacidade</a>
+<span>Desenvolvido por <a class="hover:text-gold-light transition-colors font-semibold" href="https://wmcopy.com/" target="_blank" rel="noopener noreferrer">WMCOPY</a></span>
 </div>
 </div>
 </footer>
@@ -2766,6 +2983,22 @@ Arraste para comparar
 <button class="whatsapp-fab" type="button" aria-label="Abrir atendimento pelo WhatsApp: 3 novas mensagens" aria-controls="whatsapp-panel" aria-expanded="false" data-whatsapp-toggle><i class="fa-brands fa-whatsapp" aria-hidden="true"></i><span class="whatsapp-badge" aria-label="3 novas mensagens">3</span></button>
 </div>
 <!-- END: FloatingWhatsApp -->
+
+<!-- BEGIN: ResultDetailsModal -->
+<div class="result-modal" role="dialog" aria-modal="true" aria-labelledby="result-modal-title" aria-hidden="true" data-result-modal>
+<div class="result-modal-dialog">
+<button class="result-modal-close" type="button" aria-label="Fechar detalhes do resultado" data-result-close>
+<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg>
+</button>
+<div class="result-modal-media"><img alt="" width="820" height="1024" decoding="async" data-result-modal-image></div>
+<div class="result-modal-copy">
+<span class="result-modal-kicker" data-result-modal-method></span>
+<h3 id="result-modal-title" data-result-modal-title></h3>
+<p data-result-modal-description></p>
+</div>
+</div>
+</div>
+<!-- END: ResultDetailsModal -->
 
 <!-- BEGIN: TransformationVideoModal -->
 <div class="transformation-video-modal" role="dialog" aria-modal="true" aria-labelledby="transformation-video-modal-title" aria-hidden="true" data-video-modal>
@@ -2800,6 +3033,202 @@ Arraste para comparar
     range.addEventListener('input', updateComparison);
     range.addEventListener('change', updateComparison);
   });
+})();
+</script>
+<script data-purpose="infinite-results-gallery-and-modal">
+(() => {
+  const gallery = document.querySelector('.results-grid');
+  const modal = document.querySelector('[data-result-modal]');
+  const closeButton = modal?.querySelector('[data-result-close]');
+  const modalImage = modal?.querySelector('[data-result-modal-image]');
+  const modalMethod = modal?.querySelector('[data-result-modal-method]');
+  const modalTitle = modal?.querySelector('[data-result-modal-title]');
+  const modalDescription = modal?.querySelector('[data-result-modal-description]');
+  if (!gallery || !modal || !closeButton || !modalImage || !modalMethod || !modalTitle || !modalDescription) return;
+
+  const mobileQuery = window.matchMedia('(max-width: 767px)');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const originalCards = [...gallery.querySelectorAll(':scope > [data-result-card]')];
+  const interval = 6000;
+  let leadingClones = [];
+  let trailingClones = [];
+  let timer = 0;
+  let settleTimer = 0;
+  let lastTrigger = null;
+  let loopReady = false;
+
+  const cardOffset = card => Math.max(0, card.offsetLeft - gallery.offsetLeft);
+  const stopCarousel = () => {
+    window.clearTimeout(timer);
+    timer = 0;
+  };
+  const stopSettleTimer = () => {
+    window.clearTimeout(settleTimer);
+    settleTimer = 0;
+  };
+  const cloneCard = card => {
+    const clone = card.cloneNode(true);
+    clone.dataset.carouselClone = '';
+    clone.setAttribute('aria-hidden', 'true');
+    clone.querySelectorAll('[tabindex]').forEach(element => element.setAttribute('tabindex', '-1'));
+    return clone;
+  };
+  const cycleWidth = () => {
+    if (!trailingClones.length || !originalCards.length) return 0;
+    return cardOffset(trailingClones[0]) - cardOffset(originalCards[0]);
+  };
+  const normalizeLoopPosition = () => {
+    if (!loopReady || !mobileQuery.matches || !leadingClones.length || !trailingClones.length) return;
+    const width = cycleWidth();
+    if (!width) return;
+
+    const firstOriginal = cardOffset(originalCards[0]);
+    const firstTrailing = cardOffset(trailingClones[0]);
+    const x = gallery.scrollLeft;
+    const tolerance = 2;
+
+    if (x >= firstTrailing - tolerance) {
+      gallery.scrollTo({ left: x - width, behavior: 'auto' });
+    } else if (x < firstOriginal - tolerance) {
+      gallery.scrollTo({ left: x + width, behavior: 'auto' });
+    }
+  };
+  const queueLoopNormalization = (delay = 140) => {
+    stopSettleTimer();
+    if (!loopReady) return;
+    settleTimer = window.setTimeout(normalizeLoopPosition, delay);
+  };
+  const nearestOriginalIndex = () => {
+    normalizeLoopPosition();
+    let nearest = 0;
+    let distance = Infinity;
+    originalCards.forEach((card, index) => {
+      const nextDistance = Math.abs(cardOffset(card) - gallery.scrollLeft);
+      if (nextDistance < distance) {
+        distance = nextDistance;
+        nearest = index;
+      }
+    });
+    return nearest;
+  };
+  const scheduleCarousel = (delay = interval) => {
+    stopCarousel();
+    if (!mobileQuery.matches || reducedMotion.matches || modal.classList.contains('is-open') || document.hidden || !loopReady) return;
+    timer = window.setTimeout(advanceCarousel, delay);
+  };
+  const advanceCarousel = () => {
+    if (!loopReady || !trailingClones.length) return;
+    normalizeLoopPosition();
+    const currentIndex = nearestOriginalIndex();
+    const target = currentIndex === originalCards.length - 1
+      ? trailingClones[0]
+      : originalCards[currentIndex + 1];
+
+    gallery.scrollTo({ left: cardOffset(target), behavior: 'smooth' });
+    queueLoopNormalization(700);
+    scheduleCarousel();
+  };
+  const setupCarousel = () => {
+    if (!mobileQuery.matches || reducedMotion.matches || loopReady || originalCards.length < 2) return;
+
+    const leadingFragment = document.createDocumentFragment();
+    leadingClones = originalCards.map(cloneCard);
+    leadingClones.forEach(clone => leadingFragment.appendChild(clone));
+    gallery.insertBefore(leadingFragment, originalCards[0]);
+
+    const trailingFragment = document.createDocumentFragment();
+    trailingClones = originalCards.map(cloneCard);
+    trailingClones.forEach(clone => trailingFragment.appendChild(clone));
+    gallery.appendChild(trailingFragment);
+
+    loopReady = true;
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        gallery.scrollTo({ left: cardOffset(originalCards[0]), behavior: 'auto' });
+        scheduleCarousel();
+      });
+    });
+  };
+  const teardownCarousel = () => {
+    stopCarousel();
+    stopSettleTimer();
+    loopReady = false;
+    [...leadingClones, ...trailingClones].forEach(clone => clone.remove());
+    leadingClones = [];
+    trailingClones = [];
+    if (originalCards[0]) gallery.scrollTo({ left: 0, behavior: 'auto' });
+  };
+  const syncCarousel = () => {
+    if (mobileQuery.matches && !reducedMotion.matches) setupCarousel();
+    else teardownCarousel();
+  };
+
+  const openResult = trigger => {
+    const card = trigger.closest('[data-result-card]');
+    if (!card) return;
+    lastTrigger = trigger;
+    modalImage.src = card.dataset.resultImage || card.querySelector('img')?.currentSrc || card.querySelector('img')?.src || '';
+    modalImage.alt = `Resultado ampliado: ${card.dataset.resultTitle || 'transformação de Mega Hair'}`;
+    modalMethod.textContent = card.dataset.resultMethod || '';
+    modalTitle.textContent = card.dataset.resultTitle || '';
+    modalDescription.textContent = card.dataset.resultDescription || '';
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('result-modal-open');
+    stopCarousel();
+    closeButton.focus({ preventScroll: true });
+  };
+  const closeResult = () => {
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('result-modal-open');
+    modalImage.removeAttribute('src');
+    lastTrigger?.focus({ preventScroll: true });
+    scheduleCarousel(3000);
+  };
+
+  gallery.addEventListener('click', event => {
+    const trigger = event.target.closest('[data-result-open]');
+    if (trigger) openResult(trigger);
+  });
+  gallery.addEventListener('keydown', event => {
+    const trigger = event.target.closest('[data-result-open]');
+    if (trigger && (event.key === 'Enter' || event.key === ' ')) {
+      event.preventDefault();
+      openResult(trigger);
+    }
+  });
+  gallery.addEventListener('scroll', () => queueLoopNormalization(), { passive: true });
+  gallery.addEventListener('pointerdown', () => {
+    stopCarousel();
+    stopSettleTimer();
+  }, { passive: true });
+  gallery.addEventListener('pointerup', () => {
+    queueLoopNormalization(180);
+    scheduleCarousel(8000);
+  }, { passive: true });
+  gallery.addEventListener('pointercancel', () => {
+    queueLoopNormalization(180);
+    scheduleCarousel(8000);
+  }, { passive: true });
+  gallery.addEventListener('wheel', () => {
+    queueLoopNormalization(180);
+    scheduleCarousel(8000);
+  }, { passive: true });
+  gallery.addEventListener('mouseenter', stopCarousel);
+  gallery.addEventListener('mouseleave', () => scheduleCarousel(3000));
+  gallery.addEventListener('focusin', stopCarousel);
+  gallery.addEventListener('focusout', () => scheduleCarousel(3000));
+  closeButton.addEventListener('click', closeResult);
+  modal.addEventListener('click', event => { if (event.target === modal) closeResult(); });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && modal.classList.contains('is-open')) closeResult();
+  });
+  document.addEventListener('visibilitychange', () => document.hidden ? stopCarousel() : scheduleCarousel(3000));
+  window.addEventListener('resize', () => queueLoopNormalization(80), { passive: true });
+  mobileQuery.addEventListener?.('change', syncCarousel);
+  reducedMotion.addEventListener?.('change', syncCarousel);
+  syncCarousel();
 })();
 </script>
 <script data-purpose="transformation-video-behavior">
@@ -2945,6 +3374,14 @@ Arraste para comparar
   }, { passive: true });
 
   mobileViewport.addEventListener('change', lockHeroHeight);
+})();
+</script>
+<script data-purpose="dynamic-copyright-year">
+(() => {
+  const year = Math.max(2026, new Date().getFullYear());
+  document.querySelectorAll('[data-current-year]').forEach(element => {
+    element.textContent = String(year);
+  });
 })();
 </script>
 <script data-purpose="mobile-navigation">
