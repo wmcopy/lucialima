@@ -1508,6 +1508,22 @@
   scale: 1.3225;
   transform-origin: left center;
 }
+.lucia-responsive .header-appointment-cta {
+  height: 60px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.lucia-responsive .gold-whatsapp-icon {
+  font-size: 20px;
+  line-height: 1;
+  flex: 0 0 auto;
+}
+.lucia-responsive .gold-whatsapp-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
 </style>
 <style data-purpose="quick-stats-refinement">
 /* Acabamento editorial dos quatro indicadores, sem alterar o conteúdo */
@@ -1837,6 +1853,211 @@
 @media (max-height:680px) and (max-width:767px){.whatsapp-panel{bottom:66px;max-height:calc(100svh - 96px);overflow-y:auto}.whatsapp-panel-header{min-height:60px}.whatsapp-chat{gap:7px;padding:11px}.whatsapp-message{padding:8px 10px;font-size:11.5px}}
 @media (prefers-reduced-motion:reduce){.floating-whatsapp,.whatsapp-fab,.whatsapp-panel,.whatsapp-message,.whatsapp-typing,.whatsapp-typing span,.whatsapp-chat-cta,.whatsapp-badge{animation:none!important;transition-duration:.01ms!important}}
 </style>
+<style data-purpose="transformation-video-section">
+.transformation-video-section{position:relative;overflow:hidden;padding:96px 0;background:#f2eae0;border-bottom:1px solid #ece0ce}
+.transformation-video-section::before{content:"";position:absolute;top:-180px;right:-100px;width:460px;height:460px;border-radius:50%;background:radial-gradient(circle,rgba(185,138,62,.14),rgba(185,138,62,0) 68%);pointer-events:none}
+.transformation-video-inner{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1fr) 380px;align-items:center;gap:clamp(56px,8vw,120px);width:min(calc(100% - 80px),1180px);margin:0 auto}
+.transformation-video-copy{max-width:620px}
+.transformation-video-kicker{display:flex;align-items:center;gap:12px;margin-bottom:18px;color:#9a6e29;font-size:11px;font-weight:700;letter-spacing:.28em;text-transform:uppercase}
+.transformation-video-kicker::before{content:"";width:38px;height:1px;background:#b98a3e}
+.transformation-video-copy h2{max-width:600px;margin:0 0 22px;color:#0b0a09;font:500 clamp(44px,4.5vw,64px)/.98 "Cormorant Garamond",Georgia,serif;letter-spacing:-.025em}
+.transformation-video-copy p{max-width:570px;margin:0 0 28px;color:#4d4038;font-size:15px;line-height:1.8}
+.transformation-video-details{display:flex;flex-wrap:wrap;gap:10px 22px;margin:0;padding:22px 0 0;border-top:1px solid rgba(154,110,41,.24);list-style:none}
+.transformation-video-details li{display:flex;align-items:center;gap:9px;color:#2b211b;font-size:10px;font-weight:700;letter-spacing:.11em;text-transform:uppercase}
+.transformation-video-details li::before{content:"";width:5px;height:5px;border-radius:50%;background:#b98a3e;box-shadow:0 0 0 4px rgba(185,138,62,.12)}
+.transformation-video-preview{position:relative;width:min(100%,340px);margin:0 auto;padding:8px;border:1px solid rgba(185,138,62,.48);border-radius:170px 170px 18px 18px;background:#17120f;box-shadow:0 26px 58px rgba(43,33,27,.24)}
+.transformation-video-preview::after{content:"";position:absolute;right:-18px;bottom:-18px;width:118px;height:118px;border-right:1px solid rgba(185,138,62,.48);border-bottom:1px solid rgba(185,138,62,.48);pointer-events:none}
+.transformation-video-cover{position:relative;display:grid;width:100%;min-height:560px;place-items:center;overflow:hidden;border-radius:162px 162px 12px 12px;background:radial-gradient(circle at 50% 24%,rgba(212,168,91,.23),transparent 31%),linear-gradient(160deg,#2b211b 0%,#0b0a09 62%,#17120f 100%);color:#f7f1e8;cursor:pointer}
+.transformation-video-cover-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+.transformation-video-cover::before{content:"LL";position:absolute;color:rgba(212,168,91,.08);font:600 180px/1 "Cormorant Garamond",Georgia,serif;letter-spacing:-.08em;transform:translateX(-.04em)}
+.transformation-video-cover::after{content:"";position:absolute;inset:18px;border:1px solid rgba(212,168,91,.16);border-radius:150px 150px 7px 7px;pointer-events:none}
+.transformation-video-shade{position:absolute;inset:0;background:linear-gradient(180deg,transparent 38%,rgba(11,10,9,.2) 58%,rgba(11,10,9,.88) 100%);pointer-events:none}
+.transformation-video-play{position:relative;z-index:2;display:grid;width:88px;height:88px;place-items:center;border:1px solid rgba(247,241,232,.58);border-radius:50%;background:linear-gradient(135deg,#b98a3e 0%,#d4a85b 52%,#9a6e29 100%);color:#0b0a09;box-shadow:0 0 0 10px rgba(185,138,62,.12),0 14px 32px rgba(0,0,0,.36);transition:transform .25s ease,box-shadow .25s ease}
+.transformation-video-play svg{width:25px;height:25px;margin-left:4px;fill:currentColor}
+.transformation-video-cover:hover .transformation-video-play{transform:scale(1.06);box-shadow:0 0 0 13px rgba(185,138,62,.14),0 18px 38px rgba(0,0,0,.4)}
+.transformation-video-caption{position:absolute;right:26px;bottom:28px;left:26px;z-index:2;text-align:center}
+.transformation-video-caption strong{display:block;margin-bottom:5px;color:#f7f1e8;font:500 22px/1.1 "Cormorant Garamond",Georgia,serif}
+.transformation-video-caption span{color:#d4a85b;font-size:9px;font-weight:700;letter-spacing:.19em;text-transform:uppercase}
+.transformation-video-cover:focus-visible,.transformation-video-close:focus-visible{outline:2px solid #d4a85b;outline-offset:4px}
+.transformation-video-modal{position:fixed;inset:0;z-index:120;display:grid;place-items:center;padding:24px;background:rgba(5,4,4,.92);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .24s ease,visibility .24s}
+.transformation-video-modal.is-open{opacity:1;visibility:visible;pointer-events:auto}
+.transformation-video-dialog{position:relative;display:grid;width:min(100%,430px);max-height:calc(100svh - 48px);aspect-ratio:9/16;place-items:center;overflow:hidden;border:1px solid rgba(212,168,91,.48);border-radius:12px;background:#0b0a09;box-shadow:0 28px 80px rgba(0,0,0,.55)}
+.transformation-video-dialog video{width:100%;height:100%;object-fit:contain;background:#000}
+.transformation-video-close{position:absolute;top:12px;right:12px;z-index:3;display:grid;width:42px;height:42px;place-items:center;border:1px solid rgba(247,241,232,.28);border-radius:50%;background:rgba(11,10,9,.78);color:#f7f1e8;cursor:pointer;backdrop-filter:blur(8px);transition:background .2s ease,color .2s ease}
+.transformation-video-close:hover{background:#b98a3e;color:#0b0a09}
+.transformation-video-placeholder{padding:32px;color:#dac9b4;text-align:center}
+.transformation-video-placeholder svg{width:38px;height:38px;margin:0 auto 15px;color:#b98a3e}
+.transformation-video-placeholder strong{display:block;margin-bottom:7px;color:#f7f1e8;font:500 24px/1.1 "Cormorant Garamond",Georgia,serif}
+.transformation-video-placeholder span{font-size:10px;letter-spacing:.14em;text-transform:uppercase}
+body.video-modal-open{overflow:hidden}
+@media (max-width:767px){
+  .transformation-video-section{padding:64px 0 72px}
+  .transformation-video-inner{grid-template-columns:1fr;gap:38px;width:min(calc(100% - 40px),540px)}
+  .transformation-video-copy{text-align:center}
+  .transformation-video-kicker{justify-content:center;margin-bottom:14px;font-size:9px;letter-spacing:.22em}
+  .transformation-video-kicker::before{width:28px}
+  .transformation-video-copy h2{margin:0 auto 18px;font-size:clamp(38px,11vw,48px);line-height:1.02}
+  .transformation-video-copy p{margin:0 auto 24px;font-size:13px;line-height:1.7}
+  .transformation-video-details{justify-content:center;gap:12px 18px;padding-top:19px}
+  .transformation-video-details li{font-size:9px;letter-spacing:.08em}
+  .transformation-video-preview{width:min(100%,310px)}
+  .transformation-video-cover{min-height:510px}
+  .transformation-video-play{width:78px;height:78px}
+  .transformation-video-caption{right:22px;bottom:24px;left:22px}
+  .transformation-video-preview::after{right:-11px;bottom:-12px;width:84px;height:84px}
+  .transformation-video-modal{padding:12px}
+  .transformation-video-dialog{max-height:calc(100svh - 24px)}
+}
+@media (prefers-reduced-motion:reduce){.transformation-video-modal,.transformation-video-play,.transformation-video-close{transition:none}}
+</style>
+<style data-purpose="ll-watermarks">
+.ll-watermark{
+  position:absolute;
+  z-index:0;
+  display:flex;
+  align-items:flex-start;
+  color:rgba(154,110,41,.045);
+  font-family:"Cormorant Garamond",Georgia,serif;
+  font-weight:600;
+  line-height:.72;
+  pointer-events:none;
+  user-select:none;
+}
+.ll-watermark span{display:block}
+.ll-watermark span+span{margin-left:-.34em;transform:translateY(.27em)}
+.ll-watermark--video{
+  top:50%;
+  left:clamp(20px,5vw,76px);
+  font-size:clamp(190px,20vw,310px);
+  transform:translateY(-53%);
+}
+#metodologia{overflow:hidden}
+#metodologia .methodology-content{position:relative;z-index:1}
+.ll-watermark--methodology{
+  top:50%;
+  right:-.18em;
+  color:rgba(154,110,41,.035);
+  font-size:clamp(250px,30vw,460px);
+  transform:translateY(-48%);
+}
+.ll-watermark--cta{
+  top:50%;
+  left:50%;
+  color:rgba(212,168,91,.055);
+  font-size:clamp(250px,30vw,460px);
+  transform:translate(-50%,-50%);
+}
+@media(max-width:767px){
+  .ll-watermark--video{
+    top:35%;
+    left:50%;
+    color:rgba(154,110,41,.035);
+    font-size:170px;
+    transform:translate(-50%,-50%);
+  }
+  .ll-watermark--methodology{
+    top:54%;
+    right:-58px;
+    font-size:230px;
+  }
+  .ll-watermark--cta{font-size:230px}
+}
+</style>
+<style data-purpose="google-reviews-marquee">
+.google-reviews-section{overflow:hidden;padding:96px 0;background:#f2eae0;border-bottom:1px solid #ece0ce}
+.google-reviews-inner{width:min(calc(100% - 80px),1440px);margin:0 auto}
+.google-reviews-heading{max-width:650px;margin:0 auto 50px;text-align:center}
+.google-reviews-heading>span{display:block;margin-bottom:9px;color:#b98a3e;font-size:11px;font-weight:700;letter-spacing:.3em;text-transform:uppercase}
+.google-reviews-heading h2{margin:0;color:#0b0a09;font:500 clamp(40px,4vw,52px)/1.04 "Cormorant Garamond",Georgia,serif;letter-spacing:-.02em}
+.google-reviews-summary{display:flex;width:fit-content;margin:20px auto 0;align-items:center;justify-content:center;gap:9px;color:#4d4038;text-align:center}
+.google-reviews-summary strong{color:#0b0a09;font-size:14px;font-weight:800;line-height:1}
+.google-reviews-summary-stars{display:flex;gap:2px;color:#f59e0b;font-size:11px}
+.google-reviews-marquee{position:relative;width:100%;overflow:hidden;padding:8px 0 18px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
+.google-reviews-track{display:flex;width:max-content;gap:24px;animation:google-reviews-scroll 220s linear infinite;will-change:transform}
+.google-reviews-marquee:hover .google-reviews-track,.google-reviews-marquee:focus-within .google-reviews-track,.google-reviews-marquee:active .google-reviews-track{animation-play-state:paused}
+.google-review-set{display:flex;gap:24px}
+.google-review-set[aria-hidden="true"]{pointer-events:none}
+.google-review-card{display:flex;flex:0 0 390px;min-height:330px;flex-direction:column;padding:30px;border:1px solid #ece0ce;border-radius:12px;background:#fff;box-shadow:0 10px 28px rgba(43,33,27,.08)}
+.google-review-source{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:18px}
+.google-review-source-label{display:flex;align-items:center;gap:8px;color:#6b5a4f;font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.google-review-g{display:inline-block;width:24px;height:24px;flex:0 0 24px;border:1px solid #e7ded3;border-radius:50%;background-color:#fff;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23FFC107' d='M43.611 20.083H42V20H24v8h11.303C33.654 32.657 29.223 36 24 36c-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 12.955 4 4 12.955 4 24s8.955 20 20 20 20-8.955 20-20c0-1.341-.138-2.65-.389-3.917Z'/%3E%3Cpath fill='%23FF3D00' d='m6.306 14.691 6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4c-7.682 0-14.344 4.337-17.694 10.691Z'/%3E%3Cpath fill='%234CAF50' d='M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238C29.211 35.091 26.715 36 24 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44Z'/%3E%3Cpath fill='%231976D2' d='M43.611 20.083H42V20H24v8h11.303c-.792 2.237-2.231 4.166-4.087 5.571l6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917Z'/%3E%3C/svg%3E");background-position:center;background-repeat:no-repeat;background-size:17px 17px;color:transparent;font-size:0;box-shadow:0 2px 6px rgba(0,0,0,.08)}
+.google-review-stars{display:flex;gap:2px;color:#f59e0b;font-size:11px}
+.google-review-card blockquote{flex:1;margin:0 0 26px;color:#0b0a09;font:italic 500 20px/1.5 "Cormorant Garamond",Georgia,serif}
+.google-review-author{display:flex;align-items:center;gap:12px;padding-top:18px;border-top:1px solid #f0e7db}
+.google-review-avatar{display:grid;flex:0 0 42px;width:42px;height:42px;place-items:center;border:1px solid #b98a3e;border-radius:50%;background:rgba(185,138,62,.08);color:#9a6e29;font-size:10px;font-weight:800;letter-spacing:.04em}
+.google-review-author strong{display:block;margin-bottom:3px;color:#0b0a09;font-size:13px;font-weight:700}
+.google-review-author span{color:#73655b;font-size:10px}
+.google-reviews-action{display:flex;justify-content:center;margin-top:34px}
+.google-reviews-link{display:inline-flex;min-height:48px;align-items:center;justify-content:center;gap:10px;padding:0 24px;border:1px solid #b98a3e;border-radius:3px;color:#2b211b;font-size:10px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;transition:background .2s ease,color .2s ease,transform .2s ease}
+.google-reviews-link:hover{background:#b98a3e;color:#0b0a09;transform:translateY(-2px)}
+.google-reviews-link:focus-visible{outline:2px solid #9a6e29;outline-offset:4px}
+@keyframes google-reviews-scroll{from{transform:translateX(0)}to{transform:translateX(calc(-50% - 12px))}}
+@media(max-width:767px){
+  .google-reviews-section{padding:64px 0 70px}
+  .google-reviews-inner{width:100%}
+  .google-reviews-heading{width:calc(100% - 40px);margin-bottom:34px}
+  .google-reviews-heading>span{font-size:9px;letter-spacing:.24em}
+  .google-reviews-heading h2{font-size:clamp(36px,10vw,44px)}
+  .google-reviews-summary{justify-content:center;gap:8px;margin-top:16px}
+  .google-reviews-marquee{padding-inline:20px;-webkit-mask-image:none;mask-image:none}
+  .google-reviews-track,.google-review-set{gap:14px}
+  .google-review-card{flex-basis:min(84vw,330px);min-height:312px;padding:24px 21px;border-radius:8px}
+  .google-review-card blockquote{font-size:19px;line-height:1.48}
+  .google-reviews-action{width:calc(100% - 40px);margin:27px auto 0}
+  .google-reviews-link{width:100%;padding-inline:18px;text-align:center}
+  @keyframes google-reviews-scroll{from{transform:translateX(0)}to{transform:translateX(calc(-50% - 7px))}}
+}
+@media(prefers-reduced-motion:reduce){
+  .google-reviews-marquee{overflow-x:auto;scroll-snap-type:x proximity;scrollbar-width:thin;scrollbar-color:#b98a3e #ece0ce}
+  .google-reviews-track{animation:none}
+  .google-review-card{scroll-snap-align:start}
+  .google-review-set[aria-hidden="true"]{display:none}
+}
+</style>
+<style data-purpose="premium-gold-button-motion">
+.lucia-responsive a.bg-gold-gradient,
+.lucia-responsive button.bg-gold-gradient,
+.lucia-responsive .whatsapp-chat-cta,
+.lucia-responsive .whatsapp-fab,
+.lucia-responsive .transformation-video-play{
+  position:relative;
+  isolation:isolate;
+  background-image:linear-gradient(135deg,#B98A3E 0%,#D4A85B 50%,#9A6E29 100%);
+}
+.lucia-responsive a.bg-gold-gradient::before,
+.lucia-responsive button.bg-gold-gradient::before,
+.lucia-responsive .whatsapp-chat-cta::before,
+.lucia-responsive .whatsapp-fab::before,
+.lucia-responsive .transformation-video-play::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+  background:linear-gradient(105deg,transparent 40%,rgba(255,248,224,.08) 45%,rgba(255,255,255,.52) 50%,rgba(255,248,224,.1) 55%,transparent 60%);
+  background-size:300% 100%;
+  background-position:160% 0;
+  opacity:0;
+  pointer-events:none;
+  animation:premium-gold-flare 10.5s cubic-bezier(.22,1,.36,1) infinite;
+}
+@keyframes premium-gold-flare{
+  0%,25%{background-position:160% 0;opacity:0}
+  32%{opacity:.42}
+  68%{opacity:.42}
+  78%{background-position:-60% 0;opacity:0}
+  100%{background-position:-60% 0;opacity:0}
+}
+@media(prefers-reduced-motion:reduce){
+  .lucia-responsive a.bg-gold-gradient::before,
+  .lucia-responsive button.bg-gold-gradient::before,
+  .lucia-responsive .whatsapp-chat-cta::before,
+  .lucia-responsive .whatsapp-fab::before,
+  .lucia-responsive .transformation-video-play::before{
+    animation:none!important;
+    opacity:0;
+  }
+}
+</style>
 </head>
 <body class="lucia-responsive overflow-x-hidden antialiased selection:bg-gold-primary selection:text-white">
 <!-- BEGIN: TopBar -->
@@ -1868,9 +2089,9 @@
 </ul>
 <!-- CTA Action Button -->
 <div class="header-actions flex items-center gap-4 shrink-0">
-<a class="relative group overflow-hidden px-7 py-3 rounded-sm bg-gold-gradient text-luxury-black text-xs font-bold uppercase tracking-widest shadow-lg shadow-gold-primary/20 hover:shadow-gold-primary/40 transition-all flex items-center gap-2 whitespace-nowrap" href="#agendamento">
+<a class="header-appointment-cta gold-whatsapp-button relative group overflow-hidden px-7 py-3 rounded-sm bg-gold-gradient text-luxury-black text-xs font-bold uppercase tracking-widest shadow-lg shadow-gold-primary/20 hover:shadow-gold-primary/40 transition-all flex items-center gap-2 whitespace-nowrap" href="#agendamento">
 <span class="whitespace-nowrap">Agendar Avaliação</span>
-<i class="fa-solid fa-arrow-right text-[11px] group-hover:translate-x-1 transition-transform"></i>
+<i class="gold-whatsapp-icon fa-brands fa-whatsapp" aria-hidden="true"></i>
 </a>
 <button class="mobile-menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-navigation">
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
@@ -1887,7 +2108,7 @@
 <a href="#metodologia">Metodologia</a>
 <a href="#espaco">Espaço Ipanema</a>
 <a href="#faq">Dúvidas frequentes</a>
-<a href="#agendamento" class="mobile-menu-cta bg-gold-gradient">Agendar avaliação</a>
+<a href="#agendamento" class="mobile-menu-cta gold-whatsapp-button bg-gold-gradient"><span>Agendar avaliação</span><i class="gold-whatsapp-icon fa-brands fa-whatsapp" aria-hidden="true"></i></a>
 </nav>
 </div>
 </header>
@@ -1918,9 +2139,9 @@
 <p class="hero-intro text-base xl:text-lg font-light text-muted-sand leading-relaxed max-w-2xl mb-8"><span class="hero-intro-desktop">Comprimento, preenchimento e volume imperceptíveis ao toque. Uma aplicação artesanal que respeita o peso folicular, preserva seu cabelo natural e entrega caimento&nbsp;de&nbsp;seda.</span><span class="hero-intro-mobile">Aplicação artesanal para um resultado natural, leve e imperceptível.</span></p>
 <!-- Action Buttons -->
 <div class="hero-actions flex items-center gap-5 mb-12">
-<a class="px-8 py-4 bg-gold-gradient hover:opacity-95 text-luxury-black font-semibold text-xs tracking-[0.2em] uppercase rounded-sm shadow-xl flex items-center gap-3 transition-transform active:scale-95" href="https://wa.me/5521999999999?text=Ola%20Lucia,%20gostaria%20de%20agendar%20uma%20avaliacao%20personalizada">
-<i class="fa-brands fa-whatsapp text-sm"></i>
+<a class="gold-whatsapp-button px-8 py-4 bg-gold-gradient hover:opacity-95 text-luxury-black font-semibold text-xs tracking-[0.2em] uppercase rounded-sm shadow-xl flex items-center gap-3 transition-transform active:scale-95" href="https://wa.me/5521999999999?text=Ola%20Lucia,%20gostaria%20de%20agendar%20uma%20avaliacao%20personalizada">
 <span class="hero-cta-desktop">Quero minha avaliação</span><span class="hero-cta-mobile">Agendar minha avaliação</span>
+<i class="gold-whatsapp-icon fa-brands fa-whatsapp" aria-hidden="true"></i>
 </a>
 <a class="px-8 py-4 border border-gold-medium hover:border-gold-light text-soft-champagne hover:text-white font-medium text-xs tracking-[0.2em] uppercase rounded-sm transition-colors flex items-center gap-2" href="#transformacoes">
 <span class="">Ver transformações</span>
@@ -2125,8 +2346,8 @@ Arraste para comparar
 <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-primary text-[10px]"></i> Volume impressionante sem tração</li>
 </ul>
 </div>
-<a class="w-full py-3.5 text-center bg-gold-gradient text-luxury-black font-bold text-xs uppercase tracking-widest rounded shadow-md hover:brightness-110 transition-all" href="https://wa.me/5521999999999?text=Gostaria%20de%20saber%20sobre%20Ponto%20Americano">
-              Agendar Avaliação Deste Método
+<a class="gold-whatsapp-button w-full py-3.5 text-center bg-gold-gradient text-luxury-black font-bold text-xs uppercase tracking-widest rounded shadow-md hover:brightness-110 transition-all" href="https://wa.me/5521999999999?text=Gostaria%20de%20saber%20sobre%20Ponto%20Americano">
+<span>Agendar Avaliação Deste Método</span><i class="gold-whatsapp-icon fa-brands fa-whatsapp" aria-hidden="true"></i>
             </a>
 </div>
 <!-- Technique Card 3 -->
@@ -2226,17 +2447,43 @@ Arraste para comparar
 <p class="text-xs text-muted-sand">Envie uma foto do seu cabelo atual pelo WhatsApp e receba um pré-diagnóstico direto de&nbsp;Lucia&nbsp;Lima.</p>
 </div>
 </div>
-<a class="px-8 py-3.5 bg-gold-gradient text-luxury-black font-semibold text-xs uppercase tracking-widest rounded hover:shadow-lg transition-all flex items-center gap-2" href="https://wa.me/5521999999999?text=Gostaria%20de%20enviar%20uma%20foto%20para%20pre-diagnostico">
-<i class="fa-brands fa-whatsapp text-sm"></i>
+<a class="gold-whatsapp-button px-8 py-3.5 bg-gold-gradient text-luxury-black font-semibold text-xs uppercase tracking-widest rounded hover:shadow-lg transition-all flex items-center gap-2" href="https://wa.me/5521999999999?text=Gostaria%20de%20enviar%20uma%20foto%20para%20pre-diagnostico">
 <span class="">Enviar Minha Foto</span>
+<i class="gold-whatsapp-icon fa-brands fa-whatsapp" aria-hidden="true"></i>
 </a>
 </div>
 </div>
 </section>
 <!-- END: BeforeAfterTransformations -->
+<!-- BEGIN: TransformationVideoSection -->
+<section class="transformation-video-section" id="video-transformacao" aria-labelledby="transformation-video-title">
+<span class="ll-watermark ll-watermark--video" aria-hidden="true"><span>L</span><span>L</span></span>
+<div class="transformation-video-inner">
+<div class="transformation-video-copy">
+<span class="transformation-video-kicker">Processo &amp; Resultado</span>
+<h2 id="transformation-video-title">A transformação acontece em cada detalhe.</h2>
+<p>Veja de perto o cuidado de Lucia em diferentes etapas do atendimento — da análise dos fios ao acabamento que devolve comprimento, volume e movimento natural.</p>
+<ul class="transformation-video-details" aria-label="Destaques do vídeo">
+<li>Atendimento individual</li>
+<li>Técnica personalizada</li>
+<li>Acabamento natural</li>
+</ul>
+</div>
+<div class="transformation-video-preview">
+<button class="transformation-video-cover" type="button" aria-label="Assistir ao vídeo da transformação" aria-haspopup="dialog" data-video-open data-video-src="https://res.cloudinary.com/jcotat5a/video/upload/v1791244099/Video_Site.mp4">
+<img class="transformation-video-cover-image" src="https://res.cloudinary.com/jcotat5a/image/upload/v1791244866/capavideo.avif" alt="" width="720" height="1280" loading="lazy" decoding="async">
+<span class="transformation-video-shade" aria-hidden="true"></span>
+<span class="transformation-video-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.4v13.2L18.5 12 8 5.4Z"></path></svg></span>
+<span class="transformation-video-caption"><strong>Assista a transformação</strong><span>Vídeo real • Lucia Lima</span></span>
+</button>
+</div>
+</div>
+</section>
+<!-- END: TransformationVideoSection -->
 <!-- BEGIN: MethodologySection -->
 <section class="py-24 bg-warm-ivory relative border-b border-soft-champagne" id="metodologia">
-<div class="max-w-[1440px] mx-auto px-10">
+<span class="ll-watermark ll-watermark--methodology" aria-hidden="true"><span>L</span><span>L</span></span>
+<div class="methodology-content max-w-[1440px] mx-auto px-10">
 <div class="text-center max-w-2xl mx-auto mb-16">
 <span class="text-xs uppercase tracking-[0.3em] font-semibold text-gold-primary block mb-3">Rigor e Cuidado</span>
 <h2 class="font-editorial text-4xl xl:text-5xl font-normal text-luxury-black mb-4">A Metodologia Lucia Lima em&nbsp;4&nbsp;Passos</h2>
@@ -2280,68 +2527,45 @@ Arraste para comparar
 </section>
 <!-- END: MethodologySection -->
 <!-- BEGIN: TestimonialsSection -->
-<section class="py-24 bg-[#F2EAE0] border-b border-soft-champagne">
-<div class="max-w-[1440px] mx-auto px-10">
-<div class="text-center max-w-xl mx-auto mb-14">
-<span class="text-xs uppercase tracking-[0.3em] font-semibold text-gold-primary block mb-2">Experiências</span>
-<h2 class="font-editorial text-4xl font-normal text-luxury-black">A opinião de quem já transformou&nbsp;o&nbsp;olhar</h2>
+<section class="google-reviews-section" aria-labelledby="google-reviews-title">
+<div class="google-reviews-inner">
+<header class="google-reviews-heading">
+<span>Experiências reais</span>
+<h2 id="google-reviews-title">A opinião de quem já transformou&nbsp;o&nbsp;olhar</h2>
+<div class="google-reviews-summary" aria-label="Nota 5 de 5 baseada em 53 avaliações no Google">
+<strong>5,0</strong>
+<span class="google-reviews-summary-stars" aria-hidden="true"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
 </div>
-<div class="reviews-grid grid grid-cols-3 gap-8" tabindex="0" aria-label="Depoimentos de clientes; deslize para ver mais">
-<!-- Review 1 -->
-<div class="bg-white p-8 rounded-xl border border-soft-champagne shadow-md relative">
-<div class="flex text-amber-500 text-xs mb-4">
-<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+</header>
+<div class="google-reviews-marquee" tabindex="0" aria-label="Avaliações reais de clientes. O movimento pausa ao receber foco.">
+<div class="google-reviews-track">
+<div class="google-review-set">
+<article class="google-review-card"><div class="google-review-source"><span class="google-review-source-label"><span class="google-review-g">G</span>Avaliação no Google</span><span class="google-review-stars" aria-label="5 estrelas"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span></div><blockquote>“Simplesmente Lúcia é a fada dos megas. Minha autoestima voltou pelas mãos dela. Sou fã de toda a equipe.”</blockquote><footer class="google-review-author"><span class="google-review-avatar" aria-hidden="true">MP</span><div><strong>Maria Paula Souza Soares</strong><span>Há 2 meses</span></div></footer></article>
+<article class="google-review-card"><div class="google-review-source"><span class="google-review-source-label"><span class="google-review-g">G</span>Avaliação no Google</span><span class="google-review-stars" aria-label="5 estrelas"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span></div><blockquote>“O alongamento que ela faz é perfeito e com técnicas modernas que não prejudicam o próprio cabelo. Tem vasto conhecimento em visagismo.”</blockquote><footer class="google-review-author"><span class="google-review-avatar" aria-hidden="true">GN</span><div><strong>Gina Nat</strong><span>Há 1 ano</span></div></footer></article>
+<article class="google-review-card"><div class="google-review-source"><span class="google-review-source-label"><span class="google-review-g">G</span>Avaliação no Google</span><span class="google-review-stars" aria-label="5 estrelas"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span></div><blockquote>“Eu super recomendo de olhos fechados. Sou cliente há mais de 10 anos, desde quando ainda era localizada em Olaria.”</blockquote><footer class="google-review-author"><span class="google-review-avatar" aria-hidden="true">RT</span><div><strong>Roberta Tavares</strong><span>Há 5 meses</span></div></footer></article>
+<article class="google-review-card"><div class="google-review-source"><span class="google-review-source-label"><span class="google-review-g">G</span>Avaliação no Google</span><span class="google-review-stars" aria-label="5 estrelas"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span></div><blockquote>“Super profissional, altamente qualificada e utiliza bons materiais. Nunca tive problemas com meu cabelo; só tenho a agradecer!”</blockquote><footer class="google-review-author"><span class="google-review-avatar" aria-hidden="true">MG</span><div><strong>Marcela Gomes Nunes</strong><span>Há 1 ano</span></div></footer></article>
+<article class="google-review-card"><div class="google-review-source"><span class="google-review-source-label"><span class="google-review-g">G</span>Avaliação no Google</span><span class="google-review-stars" aria-label="5 estrelas"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span></div><blockquote>“É autoridade no assunto em extensão capilar. Recebo muitos elogios sobre minha extensão; ninguém acredita que é Mega Hair.”</blockquote><footer class="google-review-author"><span class="google-review-avatar" aria-hidden="true">JA</span><div><strong>Jucineide dos Anjos</strong><span>Há 11 meses</span></div></footer></article>
+<article class="google-review-card"><div class="google-review-source"><span class="google-review-source-label"><span class="google-review-g">G</span>Avaliação no Google</span><span class="google-review-stars" aria-label="5 estrelas"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span></div><blockquote>“Já faço com a Lúcia há mais de 5 anos. As pessoas nem imaginam que seja mega. Fica perfeito.”</blockquote><footer class="google-review-author"><span class="google-review-avatar" aria-hidden="true">MS</span><div><strong>Marcela Souza</strong><span>Há 9 meses</span></div></footer></article>
+<article class="google-review-card"><div class="google-review-source"><span class="google-review-source-label"><span class="google-review-g">G</span>Avaliação no Google</span><span class="google-review-stars" aria-label="5 estrelas"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span></div><blockquote>“Excelente profissional, detalhista e preocupada com o acabamento final. Faço mega com ela há muitos anos e só tenho elogios.”</blockquote><footer class="google-review-author"><span class="google-review-avatar" aria-hidden="true">HM</span><div><strong>Helena Maria</strong><span>Há 3 anos</span></div></footer></article>
+<article class="google-review-card"><div class="google-review-source"><span class="google-review-source-label"><span class="google-review-g">G</span>Avaliação no Google</span><span class="google-review-stars" aria-label="5 estrelas"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span></div><blockquote>“Atendimento maravilhoso, cuidado comigo e com meu cabelo do início ao fim. Recomendo muito o trabalho e a qualidade do atendimento!”</blockquote><footer class="google-review-author"><span class="google-review-avatar" aria-hidden="true">GR</span><div><strong>Gabriela Ramoves</strong><span>Há 9 meses</span></div></footer></article>
+<article class="google-review-card"><div class="google-review-source"><span class="google-review-source-label"><span class="google-review-g">G</span>Avaliação no Google</span><span class="google-review-stars" aria-label="5 estrelas"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span></div><blockquote>“Faço Mega Hair com ela há 15 anos. Venho de outra cidade para fazer meu mega com ela.”</blockquote><footer class="google-review-author"><span class="google-review-avatar" aria-hidden="true">AC</span><div><strong>Ana Cristina</strong><span>Há 3 anos</span></div></footer></article>
+<article class="google-review-card"><div class="google-review-source"><span class="google-review-source-label"><span class="google-review-g">G</span>Avaliação no Google</span><span class="google-review-stars" aria-label="5 estrelas"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span></div><blockquote>“Faço o cabelo com a Lúcia há anos e sempre saio positivamente surpresa com o resultado do mega.”</blockquote><footer class="google-review-author"><span class="google-review-avatar" aria-hidden="true">DL</span><div><strong>Daniela Lima Barbara</strong><span>Há 3 semanas</span></div></footer></article>
 </div>
-<p class="font-editorial text-lg text-luxury-black italic mb-6 leading-relaxed">
-              "Coloco mega hair há 8 anos e nunca vi um trabalho tão minucioso. Ninguém diz que não é meu cabelo! E o mais importante: meu cabelo de baixo continua crescendo saudável."
-            </p>
-<div class="flex items-center gap-3">
-<div class="w-10 h-10 rounded-full bg-gold-primary/10 border border-gold-primary flex items-center justify-center font-bold text-xs text-gold-primary">
-                PS
-              </div>
-<div>
-<h5 class="text-sm font-semibold text-luxury-black">Patrícia Silveira</h5>
-<span class="text-[11px] text-luxury-charcoal/80">Cliente há 3 anos • Ipanema</span>
-</div>
-</div>
-</div>
-<!-- Review 2 -->
-<div class="bg-white p-8 rounded-xl border border-soft-champagne shadow-md relative">
-<div class="flex text-amber-500 text-xs mb-4">
-<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-</div>
-<p class="font-editorial text-lg text-luxury-black italic mb-6 leading-relaxed">
-              "O atendimento privativo no estúdio faz toda a diferença. Nada de salão cheio e barulhento. A Lucia cuida de cada detalhe com um carinho e perfeccionismo raros no Rio."
-            </p>
-<div class="flex items-center gap-3">
-<div class="w-10 h-10 rounded-full bg-gold-primary/10 border border-gold-primary flex items-center justify-center font-bold text-xs text-gold-primary">
-                LF
-              </div>
-<div>
-<h5 class="text-sm font-semibold text-luxury-black">Luísa Fontenele</h5>
-<span class="text-[11px] text-luxury-charcoal/80">Advogada • Leblon</span>
+<div class="google-review-set" aria-hidden="true">
+<article class="google-review-card"><div class="google-review-source"><span class="google-review-source-label"><span class="google-review-g">G</span>Avaliação no Google</span><span class="google-review-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span></div><blockquote>“Simplesmente Lúcia é a fada dos megas. Minha autoestima voltou pelas mãos dela. Sou fã de toda a equipe.”</blockquote><footer class="google-review-author"><span class="google-review-avatar">MP</span><div><strong>Maria Paula Souza Soares</strong><span>Há 2 meses</span></div></footer></article>
+<article class="google-review-card"><div class="google-review-source"><span class="google-review-source-label"><span class="google-review-g">G</span>Avaliação no Google</span><span class="google-review-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span></div><blockquote>“O alongamento que ela faz é perfeito e com técnicas modernas que não prejudicam o próprio cabelo. Tem vasto conhecimento em visagismo.”</blockquote><footer class="google-review-author"><span class="google-review-avatar">GN</span><div><strong>Gina Nat</strong><span>Há 1 ano</span></div></footer></article>
+<article class="google-review-card"><div class="google-review-source"><span class="google-review-source-label"><span class="google-review-g">G</span>Avaliação no Google</span><span class="google-review-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span></div><blockquote>“Eu super recomendo de olhos fechados. Sou cliente há mais de 10 anos, desde quando ainda era localizada em Olaria.”</blockquote><footer class="google-review-author"><span class="google-review-avatar">RT</span><div><strong>Roberta Tavares</strong><span>Há 5 meses</span></div></footer></article>
+<article class="google-review-card"><div class="google-review-source"><span class="google-review-source-label"><span class="google-review-g">G</span>Avaliação no Google</span><span class="google-review-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span></div><blockquote>“Super profissional, altamente qualificada e utiliza bons materiais. Nunca tive problemas com meu cabelo; só tenho a agradecer!”</blockquote><footer class="google-review-author"><span class="google-review-avatar">MG</span><div><strong>Marcela Gomes Nunes</strong><span>Há 1 ano</span></div></footer></article>
+<article class="google-review-card"><div class="google-review-source"><span class="google-review-source-label"><span class="google-review-g">G</span>Avaliação no Google</span><span class="google-review-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span></div><blockquote>“É autoridade no assunto em extensão capilar. Recebo muitos elogios sobre minha extensão; ninguém acredita que é Mega Hair.”</blockquote><footer class="google-review-author"><span class="google-review-avatar">JA</span><div><strong>Jucineide dos Anjos</strong><span>Há 11 meses</span></div></footer></article>
+<article class="google-review-card"><div class="google-review-source"><span class="google-review-source-label"><span class="google-review-g">G</span>Avaliação no Google</span><span class="google-review-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span></div><blockquote>“Já faço com a Lúcia há mais de 5 anos. As pessoas nem imaginam que seja mega. Fica perfeito.”</blockquote><footer class="google-review-author"><span class="google-review-avatar">MS</span><div><strong>Marcela Souza</strong><span>Há 9 meses</span></div></footer></article>
+<article class="google-review-card"><div class="google-review-source"><span class="google-review-source-label"><span class="google-review-g">G</span>Avaliação no Google</span><span class="google-review-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span></div><blockquote>“Excelente profissional, detalhista e preocupada com o acabamento final. Faço mega com ela há muitos anos e só tenho elogios.”</blockquote><footer class="google-review-author"><span class="google-review-avatar">HM</span><div><strong>Helena Maria</strong><span>Há 3 anos</span></div></footer></article>
+<article class="google-review-card"><div class="google-review-source"><span class="google-review-source-label"><span class="google-review-g">G</span>Avaliação no Google</span><span class="google-review-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span></div><blockquote>“Atendimento maravilhoso, cuidado comigo e com meu cabelo do início ao fim. Recomendo muito o trabalho e a qualidade do atendimento!”</blockquote><footer class="google-review-author"><span class="google-review-avatar">GR</span><div><strong>Gabriela Ramoves</strong><span>Há 9 meses</span></div></footer></article>
+<article class="google-review-card"><div class="google-review-source"><span class="google-review-source-label"><span class="google-review-g">G</span>Avaliação no Google</span><span class="google-review-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span></div><blockquote>“Faço Mega Hair com ela há 15 anos. Venho de outra cidade para fazer meu mega com ela.”</blockquote><footer class="google-review-author"><span class="google-review-avatar">AC</span><div><strong>Ana Cristina</strong><span>Há 3 anos</span></div></footer></article>
+<article class="google-review-card"><div class="google-review-source"><span class="google-review-source-label"><span class="google-review-g">G</span>Avaliação no Google</span><span class="google-review-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span></div><blockquote>“Faço o cabelo com a Lúcia há anos e sempre saio positivamente surpresa com o resultado do mega.”</blockquote><footer class="google-review-author"><span class="google-review-avatar">DL</span><div><strong>Daniela Lima Barbara</strong><span>Há 3 semanas</span></div></footer></article>
 </div>
 </div>
 </div>
-<!-- Review 3 -->
-<div class="bg-white p-8 rounded-xl border border-soft-champagne shadow-md relative">
-<div class="flex text-amber-500 text-xs mb-4">
-<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-</div>
-<p class="font-editorial text-lg text-luxury-black italic mb-6 leading-relaxed">
-              "Tinha medo de dor de cabeça e peso, mas a nanopele é inacreditável de tão leve. Durmo perfeitamente na primeira noite e lavo sem drama nenhum. Recomendo de olhos fechados."
-            </p>
-<div class="flex items-center gap-3">
-<div class="w-10 h-10 rounded-full bg-gold-primary/10 border border-gold-primary flex items-center justify-center font-bold text-xs text-gold-primary">
-                CC
-              </div>
-<div>
-<h5 class="text-sm font-semibold text-luxury-black">Carolina Castilho</h5>
-<span class="text-[11px] text-luxury-charcoal/80">Empresária • Barra da Tijuca</span>
-</div>
-</div>
-</div>
-</div>
+<div class="google-reviews-action"><a class="google-reviews-link" href="https://www.google.com/maps/place/Lucia+Lima+mega+hair/@-22.9843552,-43.1977927,17z/data=!3m1!5s0x9bd51081bfaef9:0x8d7db6f04a46358e!4m18!1m9!3m8!1s0x9bd5cc27ec55f3:0x128dbcd8628d003!2sLucia+Lima+mega+hair!8m2!3d-22.9843552!4d-43.1977927!9m1!1b1!16s%2Fg%2F11v0tc9tv4!3m7!1s0x9bd5cc27ec55f3:0x128dbcd8628d003!8m2!3d-22.9843552!4d-43.1977927!9m1!1b1!16s%2Fg%2F11v0tc9tv4?entry=ttu" target="_blank" rel="noopener noreferrer"><span class="google-review-g" aria-hidden="true">G</span>Ver todas as avaliações no Google</a></div>
 </div>
 </section>
 <!-- END: TestimonialsSection -->
@@ -2450,6 +2674,7 @@ Arraste para comparar
 <section class="py-24 bg-gradient-to-b from-luxury-black to-luxury-dark relative overflow-hidden" id="agendamento">
 <!-- Decorative Backdrop Blur -->
 <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gold-primary/10 via-transparent to-transparent pointer-events-none"></div>
+<span class="ll-watermark ll-watermark--cta" aria-hidden="true"><span>L</span><span>L</span></span>
 <div class="max-w-[1000px] mx-auto px-10 text-center relative z-10">
 <div class="w-16 h-16 rounded-full border border-gold-primary/40 bg-gold-primary/10 flex items-center justify-center mx-auto mb-6 text-gold-primary text-2xl">
 <i class="fa-solid fa-calendar-check"></i>
@@ -2457,9 +2682,9 @@ Arraste para comparar
 <h2 class="font-editorial text-4xl xl:text-6xl font-normal text-warm-ivory mb-6 tracking-tight">Pronta para conquistar o comprimento e o volume dos&nbsp;seus&nbsp;sonhos?</h2>
 <p class="text-base text-muted-sand font-light max-w-xl mx-auto mb-10 leading-relaxed">Reserve sua data exclusiva com Lucia Lima em Ipanema. Avaliações com teste de mecha e seleção ao vivo&nbsp;dos&nbsp;cabelos.</p>
 <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-<a class="w-full sm:w-auto px-10 py-4 bg-gold-gradient text-luxury-black font-bold text-xs uppercase tracking-[0.2em] rounded shadow-xl hover:brightness-110 transition-all flex items-center justify-center gap-3" href="https://wa.me/5521999999999?text=Ola%20Lucia,%20quero%20agendar%20minha%20avaliacao%20em%20Ipanema">
-<i class="fa-brands fa-whatsapp text-base"></i>
+<a class="gold-whatsapp-button w-full sm:w-auto px-10 py-4 bg-gold-gradient text-luxury-black font-bold text-xs uppercase tracking-[0.2em] rounded shadow-xl hover:brightness-110 transition-all flex items-center justify-center gap-3" href="https://wa.me/5521999999999?text=Ola%20Lucia,%20quero%20agendar%20minha%20avaliacao%20em%20Ipanema">
 <span class="">Agendar no WhatsApp Agora</span>
+<i class="gold-whatsapp-icon fa-brands fa-whatsapp" aria-hidden="true"></i>
 </a>
 <a class="w-full sm:w-auto px-8 py-4 border border-gold-medium hover:border-gold-light text-soft-champagne font-semibold text-xs uppercase tracking-[0.2em] rounded transition-colors flex items-center justify-center gap-2" href="tel:+5521998421200">
 <i class="fa-solid fa-phone text-xs text-gold-primary"></i>
@@ -2535,12 +2760,28 @@ Arraste para comparar
 <div class="whatsapp-message" data-whatsapp-message>Olá! Seja bem-vinda ao Espaço Lucia Lima Mega Hair. <span aria-hidden="true">✨</span></div>
 <div class="whatsapp-message" data-whatsapp-message>Para orientar você com precisão, me conte: o que gostaria de transformar no seu cabelo hoje?</div>
 <div class="whatsapp-message" data-whatsapp-message>Na avaliação, Lucia analisa seus fios e indica a técnica ideal para um Mega Hair leve, natural e imperceptível. Clique no botão de WhatsApp abaixo e venha fazer uma avaliação <span aria-hidden="true">👇</span></div>
-<a class="whatsapp-chat-cta" data-whatsapp-cta href="https://wa.me/5521999999999?text=Ola%20Lucia,%20gostaria%20de%20agendar%20minha%20avaliacao%20de%20Mega%20Hair" rel="noopener noreferrer" target="_blank"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i>Agendar minha avaliação</a>
+<a class="whatsapp-chat-cta gold-whatsapp-button" data-whatsapp-cta href="https://wa.me/5521999999999?text=Ola%20Lucia,%20gostaria%20de%20agendar%20minha%20avaliacao%20de%20Mega%20Hair" rel="noopener noreferrer" target="_blank"><span>Agendar minha avaliação</span><i class="gold-whatsapp-icon fa-brands fa-whatsapp" aria-hidden="true"></i></a>
 </div>
 </section>
 <button class="whatsapp-fab" type="button" aria-label="Abrir atendimento pelo WhatsApp: 3 novas mensagens" aria-controls="whatsapp-panel" aria-expanded="false" data-whatsapp-toggle><i class="fa-brands fa-whatsapp" aria-hidden="true"></i><span class="whatsapp-badge" aria-label="3 novas mensagens">3</span></button>
 </div>
 <!-- END: FloatingWhatsApp -->
+
+<!-- BEGIN: TransformationVideoModal -->
+<div class="transformation-video-modal" role="dialog" aria-modal="true" aria-labelledby="transformation-video-modal-title" aria-hidden="true" data-video-modal>
+<div class="transformation-video-dialog">
+<button class="transformation-video-close" type="button" aria-label="Fechar vídeo" data-video-close>
+<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg>
+</button>
+<video controls playsinline preload="none" aria-label="Transformação de Mega Hair realizada por Lucia Lima" data-video-player hidden></video>
+<div class="transformation-video-placeholder" data-video-placeholder>
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 5.5v13L18 12 8 5.5Z"></path><circle cx="12" cy="12" r="10"></circle></svg>
+<strong>Vídeo em preparação</strong>
+<span>O arquivo otimizado será inserido aqui</span>
+</div>
+</div>
+</div>
+<!-- END: TransformationVideoModal -->
 
 
 
@@ -2558,6 +2799,50 @@ Arraste para comparar
     };
     range.addEventListener('input', updateComparison);
     range.addEventListener('change', updateComparison);
+  });
+})();
+</script>
+<script data-purpose="transformation-video-behavior">
+(() => {
+  const openButton = document.querySelector('[data-video-open]');
+  const modal = document.querySelector('[data-video-modal]');
+  const closeButton = modal?.querySelector('[data-video-close]');
+  const player = modal?.querySelector('[data-video-player]');
+  const placeholder = modal?.querySelector('[data-video-placeholder]');
+  if (!openButton || !modal || !closeButton || !player || !placeholder) return;
+
+  const openModal = () => {
+    const source = openButton.dataset.videoSrc?.trim();
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('video-modal-open');
+    if (source) {
+      player.src = source;
+      player.hidden = false;
+      placeholder.hidden = true;
+      player.play().catch(() => {});
+    } else {
+      player.hidden = true;
+      placeholder.hidden = false;
+    }
+    closeButton.focus({ preventScroll: true });
+  };
+
+  const closeModal = () => {
+    player.pause();
+    player.removeAttribute('src');
+    player.load();
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('video-modal-open');
+    openButton.focus({ preventScroll: true });
+  };
+
+  openButton.addEventListener('click', openModal);
+  closeButton.addEventListener('click', closeModal);
+  modal.addEventListener('click', event => { if (event.target === modal) closeModal(); });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
   });
 })();
 </script>
